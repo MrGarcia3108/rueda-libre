@@ -1,0 +1,22 @@
+Registra en la bitácora:
+
+bitácora de la url:
+
+-URL completa: http://127.0.0.1:5500/index.html
+-Host: 127.0.0.1:5500
+-Puerto: 5500
+-Ruta: /index.html
+-Metodo de la petición: GET
+-Estado de codigo: 200 
+
+bitácora de la ruta que no existe:
+
+-Ruta utilizada: ejemplo.html
+-Error: 404 Not Found
+-Significado: la ruta del servidor si se establecio, pero el archivo solicitado no se encontro
+
+bitácora de los archivos HTML, CSS, Javascript
+
+-HTML: se va utilizar para definir que hay en la pagina "<h1>Rueda libre</h1>
+-CSS: Se va utilizar para darle presentacion a la pagina "h1 { color: verde; }"
+-Javascript: se va utilizar para definir como interactura el usuario con la pagina "boton.addEventListener(...) 
