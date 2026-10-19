@@ -20,3 +20,17 @@ bitácora de los archivos HTML, CSS, Javascript
 -HTML: se va utilizar para definir que hay en la pagina "<h1>Rueda libre</h1>
 -CSS: Se va utilizar para darle presentacion a la pagina "h1 { color: verde; }"
 -Javascript: se va utilizar para definir como interactura el usuario con la pagina "boton.addEventListener(...) 
+
+bitácorade de las rutas utilizadas:
+
+-Origen(index.html): Destino(Inicio) - Ruta(href="index.html")
+-Origen(index.html): Destino(Tarifas y Rutas) - Ruta(href="tarifas.html")
+-Origen(index.html): Destino(Reservas) - Ruta(href="reservas.html")
+
+-Origen(tarifas.html): Destino(Inicio) - Ruta(href="../index.html")
+-Origen(tarifas.html): Destino(Tarifas y Rutas) - Ruta(href="tarifas.html")
+-Origen(tarifas.html): Destino(Reservas) - Ruta(href="reservas.html")
+
+-Origen(reservas.html): Destino(Inicio) - Ruta(href="../index.html")
+-Origen(reservas.html): Destino(Tarifas y Rutas) - Ruta(href="tarifas.html")
+-Origen(reservas.html): Destino(Reservas) - Ruta(href="reservas.html")
