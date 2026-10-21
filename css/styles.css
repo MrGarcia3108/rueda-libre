@@ -1,0 +1,161 @@
+/* Variables globales */
+:root {
+    /* Colores de marca */
+    --color-verde-ruta: #1E7A4F;
+    --color-naranja-pedal: #F39A2B;
+    --color-azul-noche: #14213D;
+    --color-crema: #FAF6EF;
+    --color-gris-asfalto: #5B6470;
+    --color-blanco: #FFFFFF; /* solo para texto sobre Azul Noche y Verde Ruta */
+
+    /* Tipografías con respaldo */
+    --fuente-titulos: "Montserrat", Arial, sans-serif;
+    --fuente-texto: "Open Sans", "Segoe UI", Arial, sans-serif;
+
+    /* Escala de espaciado */
+    --espacio-s: 0.5rem;
+    --espacio-m: 1rem 1.5rem;
+    --espacio-l: 2rem;
+}
+
+/* Herencia desde el cuerpo: fuente, color de texto y fondo */
+body {
+    font-family: var(--fuente-texto);
+    font-weight: 400;
+    color: var(--color-azul-noche);
+    background-color: var(--color-crema);
+    margin: 0;
+    padding: var(--espacio-m);
+}
+
+/* Fuente de títulos: un solo selector agrupado */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+}
+
+/* Encabezado y pie: Azul Noche con texto blanco */
+header, footer {
+    background-color: var(--color-azul-noche);
+    color: var(--color-blanco);
+    padding: var(--espacio-m);
+}
+
+header a, footer a {
+    color: var(--color-blanco);
+}
+
+/* Enlaces en el contenido: Verde Ruta sobre Crema */
+main a {
+    color: var(--color-verde-ruta);
+    text-decoration: underline;
+}
+
+/* Texto secundario: Gris Asfalto sobre Crema */
+small {
+    color: var(--color-gris-asfalto);
+}
+
+/* Botón principal: texto blanco sobre Verde Ruta */
+button {
+    font-family: var(--fuente-texto);
+    font-weight: 600;
+    color: var(--color-blanco);
+    background-color: var(--color-verde-ruta);
+    border: none;
+    padding: var(--espacio-s) var(--espacio-l);
+}
+
+section, aside {
+    margin-block: var(--espacio-l);
+}
+
+/* ===== Menú ===== */
+#menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-s);
+    margin: 0 0 var(--espacio-m);
+    padding: var(--espacio-s);
+    background-color: var(--color-crema);
+}
+
+#menu a {
+    display: inline-block;
+    padding: var(--espacio-s) var(--espacio-m);
+    color: var(--color-gris-asfalto);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+/* Página actual: color + negrita + borde (no depende solo del color) */
+#menu a.activo {
+    color: var(--color-verde-ruta);
+    font-weight: 600;
+    border-bottom-color: var(--color-verde-ruta);
+}
+
+/* Después de .activo: misma especificidad (1,1,1), gana el orden */
+#menu a:hover,
+#menu a:focus {
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+}
+
+#menu a:focus {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+}
+
+/* ===== Enlaces del contenido ===== */
+main a:hover {
+    color: var(--color-azul-noche);
+    text-decoration-thickness: 3px;
+}
+
+main a:focus {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+}
+
+/* ===== Enlaces de llamada a la acción ===== */
+.btn-reservar {
+    display: inline-block;
+    padding: var(--espacio-s) var(--espacio-l);
+    color: var(--color-blanco);
+    background-color: var(--color-verde-ruta);
+    font-family: var(--fuente-texto);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-reservar:hover,
+.btn-reservar:focus {
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+}
+
+.btn-reservar:focus {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 3px;
+}
+
+/* ===== Pie de página (fondo oscuro) ===== */
+footer a:focus {
+    outline: 3px solid var(--color-naranja-pedal);
+    outline-offset: 2px;
+}
+
+/* ===== Foco de los campos del formulario ===== */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+}
+
+button:hover {
+    background-color: var(--color-azul-noche);
+}

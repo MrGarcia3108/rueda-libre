@@ -110,3 +110,11 @@ Enlaces dentro de texto sobre Crema	 Verde Ruta (con subrayado)	                
 Destacados y botones secundarios	 Azul Noche (nunca blanco)	                          Naranja Pedal
 
 URL del sitio: https://mrgarcia3108.github.io/rueda-libre/
+
+bitácora error:
+#menu a { color: var(--color-gris-asfalto); }
+.activo { color: var(--color-verde-ruta); font-weight: 600; }
+
+Selector	Id	Clase	Etiqueta	Especificidad	Resultado
+#menu a	    1	0	1	(1, 0, 1)	Gana en color
+.activo	    0	1	0	(0, 1, 0)	Pierde en color, aparece tachada
