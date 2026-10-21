@@ -75,3 +75,15 @@ Justificación de tres controles:
 -Radio para el tipo de bicicleta: son solo tres opciones y el cliente debe elegir exactamente una.
 -Textarea para comentarios,el texto libre puede ser largo y de varias líneas
 -Select para la duración, es una lista corta de valores fijos.
+
+Prubas campos de campos de la tablas de reservas:
+
+Celular	    3001234567	Aceptado	
+Celular	    1234567890	Rechazado (no empieza por 3)	
+Celular	    300123	    Rechazado (menos de 10 dígitos)	
+Documento	1020304050	Aceptado	
+Documento	abc12345	Rechazado (letras)	
+Documento	12345	    Rechazado (menos de 6 dígitos)	
+Nombre	    Al	        Rechazado (menos de 3 caracteres)	
+Correo	    usuario@	Rechazado (formato inválido)	
+Fecha	    2026-10-31	Rechazada (antes del rango)	

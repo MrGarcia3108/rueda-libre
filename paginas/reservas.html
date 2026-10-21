@@ -27,15 +27,31 @@
                     <legend>Tus datos</legend>
                     <p>
                         <label for="nombre">Nombre completo:</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="nombre" name="nombre"
+                               required minlength="3"
+                               title="Escribe tu nombre completo (mínimo 3 caracteres).">
+                    </p>
+                    <p>
+                        <label for="documento">Documento:</label>
+                        <input type="text" id="documento" name="documento"
+                               required minlength="6" maxlength="10"
+                               pattern="[0-9]{6,10}" inputmode="numeric"
+                               title="Solo números, entre 6 y 10 dígitos. Ejemplo: 1020304050">
+                        <small>Solo números, de 6 a 10 dígitos.</small>
                     </p>
                     <p>
                         <label for="correo">Correo electrónico:</label>
-                        <input type="email" id="correo" name="correo" required>
+                        <input type="email" id="correo" name="correo"
+                               required
+                               title="Escribe un correo válido. Ejemplo: nombre@correo.com">
                     </p>
                     <p>
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" id="telefono" name="telefono" required>
+                        <label for="telefono">Celular:</label>
+                        <input type="tel" id="telefono" name="telefono"
+                               required minlength="10" maxlength="10"
+                               pattern="3[0-9]{9}" inputmode="numeric"
+                               title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567">
+                        <small>10 dígitos, empieza por 3.</small>
                     </p>
                 </fieldset>
 
@@ -45,41 +61,45 @@
                     <p>
                         <input type="radio" id="tipo-urbana" name="tipo_bicicleta" value="urbana" required>
                         <label for="tipo-urbana">Urbana</label>
-                        <input type="radio" id="tipo-montana" name="tipo_bicicleta" value="montana">
+                        <input type="radio" id="tipo-montana" name="tipo_bicicleta" value="montana" required>
                         <label for="tipo-montana">Montaña</label>
-                        <input type="radio" id="tipo-electrica" name="tipo_bicicleta" value="electrica">
+                        <input type="radio" id="tipo-electrica" name="tipo_bicicleta" value="electrica" required>
                         <label for="tipo-electrica">Eléctrica</label>
                     </p>
                     <p>
-                        <label for="duracion">Duración del alquiler:</label>
-                        <select id="duracion" name="duracion" required>
-                            <option value="">Selecciona una opción</option>
+                        <label for="plan">Plan:</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Selecciona un plan</option>
                             <option value="1-hora">1 hora</option>
                             <option value="medio-dia">Medio día (4 h)</option>
                             <option value="dia-completo">Día completo</option>
                         </select>
                     </p>
                     <p>
-                        <label for="fecha">Fecha de retiro:</label>
-                        <input type="date" id="fecha" name="fecha" required>
+                        <label for="fecha">Fecha del alquiler:</label>
+                        <input type="date" id="fecha" name="fecha"
+                               required min="2026-11-01" max="2026-12-31"
+                               title="Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.">
                     </p>
                     <p>
                         <label for="cantidad">Cantidad de bicicletas:</label>
-                        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
+                        <input type="number" id="cantidad" name="cantidad"
+                               required min="1" max="6" value="1"
+                               title="Cantidad entre 1 y 6 bicicletas.">
                     </p>
                 </fieldset>
 
                 <fieldset>
                     <legend>Confirmación</legend>
                     <p>
-                        <label for="comentarios">Comentarios o requerimientos especiales:</label>
+                        <label for="comentarios">Comentarios (opcional, máximo 300 caracteres):</label>
                     </p>
                     <p>
-                        <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
+                        <textarea id="comentarios" name="comentarios" rows="4" cols="40" maxlength="300"></textarea>
                     </p>
                     <p>
-                        <input type="checkbox" id="acepta" name="acepta_condiciones" value="si" required>
-                        <label for="acepta">Confirmo que los datos son correctos y acepto las condiciones del alquiler.</label>
+                        <input type="checkbox" id="acepta" name="acepta_politicas" value="si" required>
+                        <label for="acepta">Acepto las políticas de alquiler.</label>
                     </p>
                 </fieldset>
 
