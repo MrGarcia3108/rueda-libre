@@ -86,4 +86,25 @@ Documento	abc12345	Rechazado (letras)
 Documento	12345	    Rechazado (menos de 6 dígitos)	
 Nombre	    Al	        Rechazado (menos de 3 caracteres)	
 Correo	    usuario@	Rechazado (formato inválido)	
-Fecha	    2026-10-31	Rechazada (antes del rango)	
+Fecha	    2026-10-31	Rechazada (antes del rango)
+
+Auditoría de accesibilidad:
+
+index	img/bicicleta.png con alt="Bicicleta" es decorativa: aparece junto a los pasos y no aporta información	Cambiar a alt=""
+
+index	img/ruta.png es un mapa, y alt="Mapa de ubicación de Rueda libre" es poco descriptivo	alt="Mapa con la ubicación de Rueda libre en el centro de Medellín, cerca de ciclovías"
+
+index	El enlace “Ver en Google Maps” no dice a dónde lleva	Ver ubicación de Rueda libre en Google Maps
+
+tarifas	Tres enlaces idénticos “Reserva ahora” en dos secciones	Reserva ahora una bicicleta y Reserva ahora un recorrido
+
+reservas	Los radios están sin un grupo con nombre	Envolver los tres radios en un <fieldset> con <legend>Tipo de bicicleta</legend> en lugar del <p> suelto
+
+Mapa uso de color:
+
+Texto general	                     Azul Noche	                                          Crema
+Texto secundario	                 Gris Asfalto	                                      Crema
+Títulos y encabezado	             Blanco (sobre Azul Noche) o Azul Noche (sobre Crema) Azul Noche / Crema
+Botones principales y enlaces	     Blanco	                                              Verde Ruta
+Enlaces dentro de texto sobre Crema	 Verde Ruta (con subrayado)	                          Crema
+Destacados y botones secundarios	 Azul Noche (nunca blanco)	                          Naranja Pedal
