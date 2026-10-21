@@ -34,3 +34,38 @@ bitácorade de las rutas utilizadas:
 -Origen(reservas.html): Destino(Inicio) - Ruta(href="../index.html")
 -Origen(reservas.html): Destino(Tarifas y Rutas) - Ruta(href="tarifas.html")
 -Origen(reservas.html): Destino(Reservas) - Ruta(href="reservas.html")
+
+Esquema de paginas:
+
+-index.html:
+
+body
+-header
+-main
+--section: Quiénes somos
+--section: Servicios (5 articulos)
+--section: Pasos para alquilar
+--section: Beneficios
+--section: Encuéntranos
+--section: Contacto
+-footer
+
+-tarifas.html:
+
+body
+-header 
+-main
+--section: Tarifas 
+---section: Alquiler (tabla)
+---section: Recorridos (tabla)
+--aside: Qué llevar
+-footer
+
+-reservas.html:
+
+body
+-header
+-main
+--section: Contacto (correo)
+--aside: Horarios de atención
+-footer
