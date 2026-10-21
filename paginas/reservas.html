@@ -19,6 +19,74 @@
     </header>
 
     <main>
+        <section id="formulario-reserva">
+            <h2>Formulario de reserva</h2>
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    <p>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </p>
+                    <p>
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </p>
+                    <p>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+                    <p>Tipo de bicicleta:</p>
+                    <p>
+                        <input type="radio" id="tipo-urbana" name="tipo_bicicleta" value="urbana" required>
+                        <label for="tipo-urbana">Urbana</label>
+                        <input type="radio" id="tipo-montana" name="tipo_bicicleta" value="montana">
+                        <label for="tipo-montana">Montaña</label>
+                        <input type="radio" id="tipo-electrica" name="tipo_bicicleta" value="electrica">
+                        <label for="tipo-electrica">Eléctrica</label>
+                    </p>
+                    <p>
+                        <label for="duracion">Duración del alquiler:</label>
+                        <select id="duracion" name="duracion" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="1-hora">1 hora</option>
+                            <option value="medio-dia">Medio día (4 h)</option>
+                            <option value="dia-completo">Día completo</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="fecha">Fecha de retiro:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </p>
+                    <p>
+                        <label for="cantidad">Cantidad de bicicletas:</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirmación</legend>
+                    <p>
+                        <label for="comentarios">Comentarios o requerimientos especiales:</label>
+                    </p>
+                    <p>
+                        <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="acepta" name="acepta_condiciones" value="si" required>
+                        <label for="acepta">Confirmo que los datos son correctos y acepto las condiciones del alquiler.</label>
+                    </p>
+                </fieldset>
+
+                <button type="submit" name="enviar" value="reservar">Enviar reserva</button>
+            </form>
+        </section>
+
         <section id="contacto">
             <h2>Contacto</h2>
             <p>Si tienes alguna duda, contacta con nosotros.</p>

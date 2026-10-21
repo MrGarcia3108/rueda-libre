@@ -69,3 +69,9 @@ body
 --section: Contacto (correo)
 --aside: Horarios de atención
 -footer
+
+Justificación de tres controles:
+
+-Radio para el tipo de bicicleta: son solo tres opciones y el cliente debe elegir exactamente una.
+-Textarea para comentarios,el texto libre puede ser largo y de varias líneas
+-Select para la duración, es una lista corta de valores fijos.
