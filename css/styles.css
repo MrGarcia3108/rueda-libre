@@ -1,24 +1,26 @@
-/* Variables globales */
+/* ===== 1. Variables globales ===== */
 :root {
-    /* Colores de marca */
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
     --color-azul-noche: #14213D;
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
-    --color-blanco: #FFFFFF; /* solo para texto sobre Azul Noche y Verde Ruta */
+    --color-blanco: #FFFFFF;
 
-    /* Tipografías con respaldo */
     --fuente-titulos: "Montserrat", Arial, sans-serif;
     --fuente-texto: "Open Sans", "Segoe UI", Arial, sans-serif;
 
-    /* Escala de espaciado */
     --espacio-s: 0.5rem;
-    --espacio-m: 1rem 1.5rem;
+    --espacio-m: 1rem;
     --espacio-l: 2rem;
 }
 
-/* Herencia desde el cuerpo: fuente, color de texto y fondo */
+/* ===== 2. Modelo de caja (NUEVO) ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ===== 3. Base: herencia desde el body ===== */
 body {
     font-family: var(--fuente-texto);
     font-weight: 400;
@@ -28,13 +30,12 @@ body {
     padding: var(--espacio-m);
 }
 
-/* Fuente de títulos: un solo selector agrupado */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
     font-weight: 700;
 }
 
-/* Encabezado y pie: Azul Noche con texto blanco */
+/* ===== 4. Estructura ===== */
 header, footer {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
@@ -45,40 +46,55 @@ header a, footer a {
     color: var(--color-blanco);
 }
 
-/* Enlaces en el contenido: Verde Ruta sobre Crema */
-main a {
-    color: var(--color-verde-ruta);
-    text-decoration: underline;
+main {                                  /* NUEVO */
+    max-width: 60rem;
+    margin: 0 auto;
 }
 
-/* Texto secundario: Gris Asfalto sobre Crema */
-small {
-    color: var(--color-gris-asfalto);
-}
-
-/* Botón principal: texto blanco sobre Verde Ruta */
-button {
-    font-family: var(--fuente-texto);
-    font-weight: 600;
-    color: var(--color-blanco);
-    background-color: var(--color-verde-ruta);
-    border: none;
-    padding: var(--espacio-s) var(--espacio-l);
+.portada {                              /* NUEVO */
+    min-height: 50vh;
 }
 
 section, aside {
     margin-block: var(--espacio-l);
 }
 
-/* ===== Menú ===== */
+small {
+    color: var(--color-gris-asfalto);
+}
+
+/* ===== 5. Enlaces del contenido ===== */
+main a {
+    color: var(--color-verde-ruta);
+    text-decoration: underline;
+}
+
+main a:hover {
+    color: var(--color-azul-noche);
+    text-decoration-thickness: 3px;
+}
+
+main a:focus {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+}
+
+footer a:focus {
+    outline: 3px solid var(--color-naranja-pedal);
+    outline-offset: 2px;
+}
+
+/* ===== 6. Menú (CAMBIA: inline-block en lugar de flex) ===== */
 #menu {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espacio-s);
     margin: 0 0 var(--espacio-m);
     padding: var(--espacio-s);
     background-color: var(--color-crema);
+}
+
+#menu li {
+    display: inline-block;
+    margin-inline-end: var(--espacio-s);
 }
 
 #menu a {
@@ -89,14 +105,13 @@ section, aside {
     border-bottom: 3px solid transparent;
 }
 
-/* Página actual: color + negrita + borde (no depende solo del color) */
 #menu a.activo {
     color: var(--color-verde-ruta);
     font-weight: 600;
     border-bottom-color: var(--color-verde-ruta);
 }
 
-/* Después de .activo: misma especificidad (1,1,1), gana el orden */
+/* Estos van DESPUÉS de .activo */
 #menu a:hover,
 #menu a:focus {
     color: var(--color-blanco);
@@ -108,18 +123,21 @@ section, aside {
     outline-offset: 2px;
 }
 
-/* ===== Enlaces del contenido ===== */
-main a:hover {
-    color: var(--color-azul-noche);
-    text-decoration-thickness: 3px;
+/* ===== 7. Botones (CAMBIA: relleno generoso, una sola regla) ===== */
+button {
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-blanco);
+    background-color: var(--color-verde-ruta);
+    border: none;
+    padding: var(--espacio-m) var(--espacio-l);
 }
 
-main a:focus {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 2px;
+button:hover {
+    background-color: var(--color-azul-noche);
 }
 
-/* ===== Enlaces de llamada a la acción ===== */
 .btn-reservar {
     display: inline-block;
     padding: var(--espacio-s) var(--espacio-l);
@@ -141,21 +159,82 @@ main a:focus {
     outline-offset: 3px;
 }
 
-/* ===== Pie de página (fondo oscuro) ===== */
-footer a:focus {
-    outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 2px;
+/* ===== 8. Tarjetas de servicios (NUEVO) ===== */
+.tarjeta {
+    padding: var(--espacio-m);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: var(--espacio-s);
+    margin-block-end: var(--espacio-m);
 }
 
-/* ===== Foco de los campos del formulario ===== */
+.tarjeta img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.tarjeta h3 {
+    margin-block: var(--espacio-m) 0;
+}
+
+/* ===== 9. Tablas (NUEVO) ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--espacio-m);
+}
+
+th, td {
+    padding: var(--espacio-s) var(--espacio-m);
+    border: 1px solid var(--color-gris-asfalto);
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--color-azul-noche);
+    color: var(--color-blanco);
+}
+
+/* ===== 10. Formulario (NUEVO) ===== */
+fieldset {
+    min-width: 0;
+    margin-block-end: var(--espacio-l);
+    padding: var(--espacio-m);
+    border: 1px solid var(--color-gris-asfalto);
+}
+
+fieldset p {
+    margin-block: var(--espacio-m);
+}
+
+fieldset p > label:first-child {
+    display: block;
+    margin-block-end: var(--espacio-s);
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: var(--espacio-s);
+    border: 1px solid var(--color-gris-asfalto);
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="radio"] + label {
+    margin-inline-end: var(--espacio-m);
+}
+
+/* Foco de los controles: al final para que no lo pise nada */
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 2px;
-}
-
-button:hover {
-    background-color: var(--color-azul-noche);
 }
