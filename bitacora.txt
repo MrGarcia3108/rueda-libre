@@ -118,3 +118,15 @@ bitácora error:
 Selector	Id	Clase	Etiqueta	Especificidad	Resultado
 #menu a	    1	0	1	(1, 0, 1)	Gana en color
 .activo	    0	1	0	(0, 1, 0)	Pierde en color, aparece tachada
+
+Cierre de la semana 1: v1.0
+
+Qué construí
+- Estructura: Se hizo una estructura ordenada con HTML semantico .
+- Formulario: grupos con creacion de formulario con fieldset para un mejor orden.
+- Validación: Las regrlas del cleinte se cumplieron con sus correcciones.
+- Accesibilidad y publicación: creacion de la url en la herramienta de Github en GitHub Pages.
+- CSS con variables: paleta, tipografías y espaciado, con herencia desde `body`.
+- Selectores y cascada: conflicto id contra clase resuelto por especificidad, y estados `:hover` y `:focus`.
+- Modelo de caja: ancho máximo, tarjetas, tablas y formulario.
+- Posicionamiento y cierre: WhatsApp fijo y hoja de estilos organizada.

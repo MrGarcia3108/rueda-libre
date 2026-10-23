@@ -1,5 +1,6 @@
-/* ===== 1. Variables globales ===== */
+/*1. VARIABLES*/
 :root {
+    /* Colores de marca */
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
     --color-azul-noche: #14213D;
@@ -7,27 +8,28 @@
     --color-gris-asfalto: #5B6470;
     --color-blanco: #FFFFFF;
 
+    /* Tipografías */
     --fuente-titulos: "Montserrat", Arial, sans-serif;
     --fuente-texto: "Open Sans", "Segoe UI", Arial, sans-serif;
 
+    /* Escala de espaciado */
     --espacio-s: 0.5rem;
     --espacio-m: 1rem;
     --espacio-l: 2rem;
 }
 
-/* ===== 2. Modelo de caja (NUEVO) ===== */
+
+/*2. BASE*/
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* ===== 3. Base: herencia desde el body ===== */
 body {
     font-family: var(--fuente-texto);
     font-weight: 400;
     color: var(--color-azul-noche);
     background-color: var(--color-crema);
     margin: 0;
-    padding: var(--espacio-m);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,7 +37,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* ===== 4. Estructura ===== */
 header, footer {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
@@ -46,12 +47,12 @@ header a, footer a {
     color: var(--color-blanco);
 }
 
-main {                                  /* NUEVO */
+main {
     max-width: 60rem;
     margin: 0 auto;
 }
 
-.portada {                              /* NUEVO */
+.portada {
     min-height: 50vh;
 }
 
@@ -63,7 +64,6 @@ small {
     color: var(--color-gris-asfalto);
 }
 
-/* ===== 5. Enlaces del contenido ===== */
 main a {
     color: var(--color-verde-ruta);
     text-decoration: underline;
@@ -74,7 +74,13 @@ main a:hover {
     text-decoration-thickness: 3px;
 }
 
-main a:focus {
+/* Indicador de foco: una sola regla para todos los controles */
+main a:focus,
+#menu a:focus,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 2px;
 }
@@ -84,7 +90,8 @@ footer a:focus {
     outline-offset: 2px;
 }
 
-/* ===== 6. Menú (CAMBIA: inline-block en lugar de flex) ===== */
+
+/* ===== 3. NAVEGACIÓN ===== */
 #menu {
     list-style: none;
     margin: 0 0 var(--espacio-m);
@@ -111,19 +118,17 @@ footer a:focus {
     border-bottom-color: var(--color-verde-ruta);
 }
 
-/* Estos van DESPUÉS de .activo */
+/* Después de .activo: igual especificidad, gana el orden */
 #menu a:hover,
 #menu a:focus {
     color: var(--color-blanco);
     background-color: var(--color-azul-noche);
 }
 
-#menu a:focus {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 2px;
-}
 
-/* ===== 7. Botones (CAMBIA: relleno generoso, una sola regla) ===== */
+/*4. COMPONENTES*/
+
+/* Botones */
 button {
     font-family: var(--fuente-texto);
     font-size: 1rem;
@@ -154,13 +159,9 @@ button:hover {
     background-color: var(--color-azul-noche);
 }
 
-.btn-reservar:focus {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 3px;
-}
-
-/* ===== 8. Tarjetas de servicios (NUEVO) ===== */
+/* Tarjetas de servicios (position: relative ancla la etiqueta) */
 .tarjeta {
+    position: relative;
     padding: var(--espacio-m);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: var(--espacio-s);
@@ -177,7 +178,21 @@ button:hover {
     margin-block: var(--espacio-m) 0;
 }
 
-/* ===== 9. Tablas (NUEVO) ===== */
+/* Etiqueta "Nuevo": sale del flujo, no desplaza el contenido */
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--espacio-s);
+    right: var(--espacio-s);
+    margin: 0;
+    padding: calc(var(--espacio-s) / 2) var(--espacio-s);
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    border-radius: var(--espacio-s);
+}
+
+/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -195,7 +210,37 @@ thead th {
     color: var(--color-blanco);
 }
 
-/* ===== 10. Formulario (NUEVO) ===== */
+/* Enlace fijo de WhatsApp */
+.btn-whatsapp {
+    position: fixed;
+    right: var(--espacio-m);
+    bottom: var(--espacio-m);
+    z-index: 10;
+    padding: var(--espacio-s) var(--espacio-m);
+    background-color: var(--color-verde-ruta);
+    color: var(--color-blanco);
+    font-family: var(--fuente-texto);
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--color-blanco);
+    border-radius: var(--espacio-s);
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+}
+
+/* Anillo blanco + contorno oscuro: se ve sobre fondo claro y oscuro */
+.btn-whatsapp:focus {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--color-blanco);
+}
+
+
+/* ===== 5. FORMULARIO ===== */
 fieldset {
     min-width: 0;
     margin-block-end: var(--espacio-l);
@@ -228,13 +273,4 @@ textarea {
 
 input[type="radio"] + label {
     margin-inline-end: var(--espacio-m);
-}
-
-/* Foco de los controles: al final para que no lo pise nada */
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 2px;
 }
