@@ -133,9 +133,14 @@ Qué construí
 
 Flexbox: encabezado y pie
 
-Qué ocurre al estrechar la ventana
-
  Ancho aproximado   Encabezado                         Pie 
  576 PX             se desplaza para la izquierda      se desplaza para la izquierda 
  768 PX             se desplaza para la izquierda      se desplaza para la izquierda                                       
  1200 PX            Tiene su diseño original           Tiene su diseño original
+
+Cuadrícula de la flota
+
+Ancho      Columnas 
+1280 px    se muestra 4 Columnas
+900 px     se muestra 3 Columnas
+500 px     se muestra 2 Columnas
