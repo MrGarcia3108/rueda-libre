@@ -92,20 +92,46 @@ footer a:focus {
 
 
 /* ===== 3. NAVEGACIÓN ===== */
+/* Encabezado: nombre en un extremo, menú en el otro */
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    gap: var(--espacio-m);
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* El logo y el saludo ocupan su propia fila */
+header > img {
+    flex: 0 0 100%;
+    height: 6rem;
+    object-fit: contain;
+    object-position: left center;
+}
+
+header > p {
+    flex: 0 0 100%;
+    margin: 0;
+}
+
 #menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-s);
     list-style: none;
-    margin: 0 0 var(--espacio-m);
+    margin: 0;
     padding: var(--espacio-s);
     background-color: var(--color-crema);
 }
 
-#menu li {
-    display: inline-block;
-    margin-inline-end: var(--espacio-s);
-}
-
 #menu a {
-    display: inline-block;
+    display: block;
     padding: var(--espacio-s) var(--espacio-m);
     color: var(--color-gris-asfalto);
     text-decoration: none;
@@ -127,6 +153,24 @@ footer a:focus {
 
 
 /*4. COMPONENTES*/
+
+/* Pie de página*/
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--espacio-l);
+    padding-bottom: calc(var(--espacio-l) * 2.5);
+}
+
+footer > p,
+footer > address {
+    flex: 0 1 18rem;
+    margin: 0;
+    font-style: normal;
+}
 
 /* Botones */
 button {
@@ -273,4 +317,71 @@ textarea {
 
 input[type="radio"] + label {
     margin-inline-end: var(--espacio-m);
+}
+
+/* ===== 6. RESPONSIVE (mobile-first) ===== */
+
+/* Base (menos de 576px)*/
+header nav {
+    flex: 1 1 100%;
+}
+
+#servicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-m);
+}
+
+#servicios > h2 {
+    flex: 0 0 100%;
+    margin: 0;
+}
+
+.tarjeta {
+    flex: 1 1 100%;
+}
+
+/* Celular grande */
+@media (min-width: 576px) {
+    .tarjeta {
+        flex: 1 1 calc(50% - var(--espacio-m));
+    }
+
+    footer > p,
+    footer > address {
+        flex: 1 1 calc(50% - var(--espacio-l));
+    }
+}
+
+/* Tableta: */
+@media (min-width: 768px) {
+    header nav {
+        flex: 0 1 auto;
+    }
+
+    footer > p,
+    footer > address {
+        flex: 1 1 0;
+    }
+
+    table {
+        display: table;
+        overflow-x: visible;
+    }
+}
+
+/* Computador */
+@media (min-width: 1200px) {
+    main {
+        max-width: 75rem;
+    }
+
+    header,
+    footer {
+        padding-inline: var(--espacio-l);
+    }
+
+    .tarjeta {
+        flex: 1 1 calc(33.333% - var(--espacio-m));
+    }
 }

@@ -130,3 +130,12 @@ Qué construí
 - Selectores y cascada: conflicto id contra clase resuelto por especificidad, y estados `:hover` y `:focus`.
 - Modelo de caja: ancho máximo, tarjetas, tablas y formulario.
 - Posicionamiento y cierre: WhatsApp fijo y hoja de estilos organizada.
+
+Flexbox: encabezado y pie
+
+Qué ocurre al estrechar la ventana
+
+ Ancho aproximado   Encabezado                         Pie 
+ 576 PX             se desplaza para la izquierda      se desplaza para la izquierda 
+ 768 PX             se desplaza para la izquierda      se desplaza para la izquierda                                       
+ 1200 PX            Tiene su diseño original           Tiene su diseño original
