@@ -160,3 +160,18 @@ La tabla obligaba a desplazarse	                display: block con overflow-x:  
 El menú se amontonaba 	                        space-between en una fila estrecha	        Nombre y menú centrados, cada uno en su fila
 Una imagen pasaba del ancho             	    Sin ancho máximo	                        img { max-width: 100%; height: auto; }
 El pie quedaba con bloques apretado	            Tres bloques en fila en pantalla estrecha	Una columna en el celular y fila desde 768 px
+
+Prueba con Bootstrap:
+
+Comparación
+
+Qué me dio Bootstrap:
+- Cuatro breakpoints ya definidos.
+- Gutters uniformes con una sola clase.
+- Tarjetas, botones y tipografía con aspecto uniforme.
+
+Qué control perdí
+- Los colores y las fuentes de la marca.
+- La escala de espaciado con variables.
+- El auto-fit: Bootstrap solo cambia en sus cuatro breakpoints.
+- La repetición de clases en cada columna.
