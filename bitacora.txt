@@ -175,3 +175,13 @@ Qué control perdí
 - La escala de espaciado con variables.
 - El auto-fit: Bootstrap solo cambia en sus cuatro breakpoints.
 - La repetición de clases en cada columna.
+
+Utilidades:
+
+flex-md-row            Cambia la dirección de los elementos a fila desde 768 px
+d-none + d-md-block    Oculta el elemento y lo muestra como bloque desde 768 px
+gap-3                  Separación uniforme entre elementos de un contenedor flex
+fs-4                   Tamaño de letra mayor, sin etiquetas de título
+text-bg-dark           Fondo oscuro con texto de contraste automático
+
+A comparacion con un css propio, Bootstrap agiliza mucho el trabajo que es darle a cada caracter un estilo
