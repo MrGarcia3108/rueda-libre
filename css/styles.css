@@ -1,4 +1,16 @@
-/*1. VARIABLES*/
+/* =====================================================
+   Rueda libre · styles.css
+   1. Variables
+   2. Base
+   3. Navegación (encabezado y menú)
+   4. Componentes (pie, botones, tarjetas, tablas, flota, WhatsApp)
+   5. Formulario
+   6. Layouts de página (portada, rutas, reservas)
+   7. Responsive (media queries)
+   ===================================================== */
+
+
+/* ===== 1. VARIABLES ===== */
 :root {
     /* Colores de marca */
     --color-verde-ruta: #1E7A4F;
@@ -19,7 +31,7 @@
 }
 
 
-/*2. BASE*/
+/* ===== 2. BASE ===== */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -50,10 +62,7 @@ header a, footer a {
 main {
     max-width: 60rem;
     margin: 0 auto;
-}
-
-.portada {
-    min-height: 50vh;
+    padding-inline: var(--espacio-m);
 }
 
 section, aside {
@@ -64,6 +73,7 @@ small {
     color: var(--color-gris-asfalto);
 }
 
+/* Enlaces del contenido */
 main a {
     color: var(--color-verde-ruta);
     text-decoration: underline;
@@ -85,6 +95,7 @@ button:focus {
     outline-offset: 2px;
 }
 
+/* En el pie (fondo oscuro) el foco usa Naranja Pedal */
 footer a:focus {
     outline: 3px solid var(--color-naranja-pedal);
     outline-offset: 2px;
@@ -92,6 +103,7 @@ footer a:focus {
 
 
 /* ===== 3. NAVEGACIÓN ===== */
+
 /* Encabezado: nombre en un extremo, menú en el otro */
 header {
     display: flex;
@@ -107,6 +119,10 @@ header h1 {
     margin: 0;
 }
 
+header nav {
+    flex: 1 1 100%;
+}
+
 /* El logo y el saludo ocupan su propia fila */
 header > img {
     flex: 0 0 100%;
@@ -120,6 +136,7 @@ header > p {
     margin: 0;
 }
 
+/* Menú */
 #menu {
     display: flex;
     flex-wrap: wrap;
@@ -152,9 +169,9 @@ header > p {
 }
 
 
-/*4. COMPONENTES*/
+/* ===== 4. COMPONENTES ===== */
 
-/* Pie de página*/
+/* Pie de página: bloques en fila (espacio extra abajo para el botón fijo) */
 footer {
     display: flex;
     flex-direction: row;
@@ -167,7 +184,7 @@ footer {
 
 footer > p,
 footer > address {
-    flex: 0 1 18rem;
+    flex: 1 1 100%;
     margin: 0;
     font-style: normal;
 }
@@ -203,13 +220,12 @@ button:hover {
     background-color: var(--color-azul-noche);
 }
 
-/* Tarjetas de servicios (position: relative ancla la etiqueta) */
+/* Tarjetas (position: relative ancla la etiqueta) */
 .tarjeta {
     position: relative;
     padding: var(--espacio-m);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: var(--espacio-s);
-    margin-block-end: var(--espacio-m);
 }
 
 .tarjeta img {
@@ -221,20 +237,36 @@ button:hover {
 .tarjeta h3 {
     margin-block: var(--espacio-m) 0;
 }
-/* Flota: cuadrícula adaptable con Grid */
+
+/* Etiqueta "Nuevo": sale del flujo, no desplaza el contenido */
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--espacio-s);
+    right: var(--espacio-s);
+    margin: 0;
+    padding: calc(var(--espacio-s) / 2) var(--espacio-s);
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    border-radius: var(--espacio-s);
+}
+
+/* Servicios y flota: cuadrícula adaptable con Grid */
+#servicios,
 #flota {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: var(--espacio-m);
 }
 
-/* El encabezado ocupa todas las columnas */
+#servicios > h2,
 #flota > h2 {
     grid-column: 1 / -1;
     margin: 0;
 }
 
-/* Cada tarjeta: Flexbox en columna */
+/* Tarjeta de modelo: Flexbox en columna */
 .modelo {
     display: flex;
     flex-direction: column;
@@ -257,28 +289,16 @@ button:hover {
     font-weight: 700;
 }
 
-/* El enlace se va al final de la tarjeta */
+/* El enlace queda siempre al final de la tarjeta */
 .modelo .btn-reservar {
     margin-top: auto;
     text-align: center;
 }
 
-/* Etiqueta "Nuevo": sale del flujo, no desplaza el contenido */
-.etiqueta-nuevo {
-    position: absolute;
-    top: var(--espacio-s);
-    right: var(--espacio-s);
-    margin: 0;
-    padding: calc(var(--espacio-s) / 2) var(--espacio-s);
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-    font-family: var(--fuente-titulos);
-    font-weight: 700;
-    border-radius: var(--espacio-s);
-}
-
-/* Tablas */
+/* Tablas: en pantallas pequeñas se desplazan dentro de sí mismas */
 table {
+    display: block;
+    overflow-x: auto;
     width: 100%;
     border-collapse: collapse;
     margin-block: var(--espacio-m);
@@ -360,41 +380,78 @@ input[type="radio"] + label {
     margin-inline-end: var(--espacio-m);
 }
 
-/* ===== 6. RESPONSIVE (mobile-first) ===== */
-
-/* Base (menos de 576px)*/
-header nav {
-    flex: 1 1 100%;
-}
-
-#servicios {
+/* Fila de campos cortos con Flexbox (documento y celular) */
+.fila-campos {
     display: flex;
     flex-wrap: wrap;
     gap: var(--espacio-m);
+    margin-block: var(--espacio-m);
 }
 
-#servicios > h2 {
-    flex: 0 0 100%;
+.fila-campos > p {
+    flex: 1 1 12rem;
     margin: 0;
 }
 
-.tarjeta {
-    flex: 1 1 100%;
+
+/* ===== 6. LAYOUTS DE PÁGINA ===== */
+
+/* Portada: dos columnas con Grid, texto centrado verticalmente */
+.portada {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-l);
+    align-items: center;
+    min-height: 50vh;
 }
 
-/* Celular grande */
-@media (min-width: 576px) {
-    .tarjeta {
-        flex: 1 1 calc(50% - var(--espacio-m));
-    }
+.portada img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--espacio-s);
+}
 
+/* Galería de rutas: tres tarjetas en una fila */
+#rutas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-m);
+}
+
+#rutas > h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+#rutas img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* Reservas: formulario y contacto en proporción 2:1 */
+.layout-reservas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-l);
+}
+
+.layout-reservas > * {
+    min-width: 0;
+    margin-block: 0;
+}
+
+
+/* ===== 7. RESPONSIVE (mobile-first) ===== */
+
+/* Celular grande: desde 576px */
+@media (min-width: 576px) {
     footer > p,
     footer > address {
         flex: 1 1 calc(50% - var(--espacio-l));
     }
 }
 
-/* Tableta: */
+/* Tableta: desde 768px */
 @media (min-width: 768px) {
     header nav {
         flex: 0 1 auto;
@@ -409,9 +466,32 @@ header nav {
         display: table;
         overflow-x: visible;
     }
+
+    .portada {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #rutas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .layout-reservas {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+
+    .layout-reservas > #formulario-reserva {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .layout-reservas > #contacto,
+    .layout-reservas > #horarios {
+        grid-column: 2;
+    }
 }
 
-/* Computador */
+/* Computador: desde 1200px */
 @media (min-width: 1200px) {
     main {
         max-width: 75rem;
@@ -420,9 +500,5 @@ header nav {
     header,
     footer {
         padding-inline: var(--espacio-l);
-    }
-
-    .tarjeta {
-        flex: 1 1 calc(33.333% - var(--espacio-m));
     }
 }

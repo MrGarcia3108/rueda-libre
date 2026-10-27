@@ -22,11 +22,10 @@
         <img id="logo" src="../img/logo.png" alt="Logo de Rueda libre" width="300">
     </header>
 
-    <main>
+    <main class="-layout-reservas">
         <section id="formulario-reserva">
             <h2>Formulario de reserva</h2>
             <form action="#" method="post">
-
                 <fieldset>
                     <legend>Tus datos</legend>
                     <p>
@@ -36,18 +35,19 @@
                                title="Escribe tu nombre completo (mínimo 3 caracteres).">
                     </p>
                     <p>
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo"
+                               required
+                               title="Escribe un correo válido. Ejemplo: nombre@correo.com">
+                    </p>
+                    <div class="fila-campos">
+                    <p>
                         <label for="documento">Documento:</label>
                         <input type="text" id="documento" name="documento"
                                required minlength="6" maxlength="10"
                                pattern="[0-9]{6,10}" inputmode="numeric"
                                title="Solo números, entre 6 y 10 dígitos. Ejemplo: 1020304050">
                         <small>Solo números, de 6 a 10 dígitos.</small>
-                    </p>
-                    <p>
-                        <label for="correo">Correo electrónico:</label>
-                        <input type="email" id="correo" name="correo"
-                               required
-                               title="Escribe un correo válido. Ejemplo: nombre@correo.com">
                     </p>
                     <p>
                         <label for="telefono">Celular:</label>
@@ -57,6 +57,7 @@
                                title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567">
                         <small>10 dígitos, empieza por 3.</small>
                     </p>
+                    </div>
                 </fieldset>
 
                 <fieldset>

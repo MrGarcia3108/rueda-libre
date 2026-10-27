@@ -144,3 +144,13 @@ Ancho      Columnas
 1280 px    se muestra 4 Columnas
 900 px     se muestra 3 Columnas
 500 px     se muestra 2 Columnas
+
+Layout con Grid y Flexbox
+
+Caso  Herramienta  Por qué 
+ Portada       Grid       Dos columnas iguales 
+ Galería       Grid       Tres columnas iguales 
+ Reservas      Grid       Proporción exacta 2:1 
+ Fila          Flexbox    Solo hay una dimensión 
+ Encabezado    Flexbox    Una fila: nombre y menú 
+ Pie           Flexbox    Una fila de tres bloques repartidos.
