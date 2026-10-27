@@ -36,6 +36,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: var(--fuente-texto);
     font-weight: 400;
@@ -109,13 +114,15 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     align-items: center;
     align-content: flex-start;
     gap: var(--espacio-m);
 }
 
 header h1 {
+    flex: 1 1 100%;
     margin: 0;
 }
 
@@ -128,7 +135,7 @@ header > img {
     flex: 0 0 100%;
     height: 6rem;
     object-fit: contain;
-    object-position: left center;
+    object-position: center;
 }
 
 header > p {
@@ -140,6 +147,7 @@ header > p {
 #menu {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: var(--espacio-s);
     list-style: none;
     margin: 0;
@@ -297,17 +305,17 @@ button:hover {
 
 /* Tablas: en pantallas pequeñas se desplazan dentro de sí mismas */
 table {
-    display: block;
-    overflow-x: auto;
     width: 100%;
     border-collapse: collapse;
     margin-block: var(--espacio-m);
+    font-size: 0.8rem;
 }
 
 th, td {
-    padding: var(--espacio-s) var(--espacio-m);
+    padding: calc(var(--espacio-s) / 2);
     border: 1px solid var(--color-gris-asfalto);
     text-align: left;
+    overflow-wrap: anywhere;
 }
 
 thead th {
@@ -443,32 +451,45 @@ input[type="radio"] + label {
 
 /* ===== 7. RESPONSIVE (mobile-first) ===== */
 
-/* Celular grande: desde 576px */
-@media (min-width: 576px) {
-    footer > p,
-    footer > address {
-        flex: 1 1 calc(50% - var(--espacio-l));
-    }
-}
-
 /* Tableta: desde 768px */
 @media (min-width: 768px) {
+    header {
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    header h1,
     header nav {
         flex: 0 1 auto;
     }
 
+    header > img {
+        object-position: left center;
+    }
+
+    #menu {
+        justify-content: flex-end;
+    }
+
+    /* Pie: bloques en fila */
     footer > p,
     footer > address {
         flex: 1 1 0;
     }
 
+    /* Tablas más cómodas */
     table {
-        display: table;
-        overflow-x: visible;
+        font-size: 1rem;
     }
 
+    th, td {
+        padding: var(--espacio-s) var(--espacio-m);
+    }
+
+    /* Layouts de página */
     .portada {
         grid-template-columns: repeat(2, 1fr);
+        min-height: 50vh;
     }
 
     #rutas {
@@ -491,7 +512,7 @@ input[type="radio"] + label {
     }
 }
 
-/* Computador: desde 1200px */
+/* Escritorio: desde 1200px */
 @media (min-width: 1200px) {
     main {
         max-width: 75rem;

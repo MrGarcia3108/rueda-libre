@@ -153,4 +153,10 @@ Caso  Herramienta  Por qué
  Reservas      Grid       Proporción exacta 2:1 
  Fila          Flexbox    Solo hay una dimensión 
  Encabezado    Flexbox    Una fila: nombre y menú 
- Pie           Flexbox    Una fila de tres bloques repartidos.
+ Pie           Flexbox    Una fila de tres bloques repartidos
+
+Problema	                                    Causa	                                    Solución
+La tabla obligaba a desplazarse	                display: block con overflow-x:              auto Tabla normal con letra y relleno pequeños
+El menú se amontonaba 	                        space-between en una fila estrecha	        Nombre y menú centrados, cada uno en su fila
+Una imagen pasaba del ancho             	    Sin ancho máximo	                        img { max-width: 100%; height: auto; }
+El pie quedaba con bloques apretado	            Tres bloques en fila en pantalla estrecha	Una columna en el celular y fila desde 768 px
