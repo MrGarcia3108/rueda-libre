@@ -1,0 +1,116 @@
+Distribución que ahora resuelve Bootstrap (container, row, col-*,
+   utilidades d-flex). Quedan comentadas como referencia.
+
+   --- Contenedor principal (ahora: main class container) ---
+   main {
+       max-width: 60rem;
+       margin: 0 auto;
+       padding-inline: var(--espacio-m);
+   }
+
+   --- Encabezado (ahora: d-flex, flex-md-row, justify-content-md-between) ---
+   header {
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: center;
+       text-align: center;
+       align-items: center;
+       gap: var(--espacio-m);
+   }
+   header h1 {
+       flex: 1 1 100%;
+       margin: 0;
+   }
+   header nav {
+       flex: 1 1 100%;
+   }
+   header > img {
+       flex: 0 0 100%;
+       height: 6rem;
+       object-fit: contain;
+   }
+
+   --- Menú (ahora: d-flex flex-wrap gap-2 list-unstyled) ---
+   #menu {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: var(--espacio-s);
+       list-style: none;
+       margin: 0;
+   }
+
+   --- Pie (ahora: row g-4 y col-md-4) ---
+   footer {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       align-items: flex-start;
+       gap: var(--espacio-l);
+   }
+   footer > p,
+   footer > address {
+       flex: 1 1 100%;
+       margin: 0;
+   }
+
+   --- Reservas (ahora: row, col-md-8 y col-md-4) ---
+   .layout-reservas {
+       display: grid;
+       grid-template-columns: 1fr;
+       gap: var(--espacio-l);
+   }
+
+   --- Fila de campos cortos (ahora: row g-3 y col-sm-6) ---
+   .fila-campos {
+       display: flex;
+       flex-wrap: wrap;
+       gap: var(--espacio-m);
+   }
+   .fila-campos > p {
+       flex: 1 1 12rem;
+       margin: 0;
+   }
+
+   --- Portada, servicios, flota y rutas (migrados en el reto anterior) ---
+   .portada {
+       display: grid;
+       grid-template-columns: 1fr;
+       gap: var(--espacio-l);
+       align-items: center;
+   }
+   #servicios,
+   #flota {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+       gap: var(--espacio-m);
+   }
+   #rutas {
+       display: grid;
+       grid-template-columns: 1fr;
+       gap: var(--espacio-m);
+   }
+   .modelo {
+       display: flex;
+       flex-direction: column;
+       gap: var(--espacio-s);
+   }
+   .modelo .btn-reservar {
+       margin-top: auto;
+       text-align: center;
+   }
+
+   --- Media query antigua de layouts ---
+   @media (min-width: 768px) {
+       .layout-reservas {
+           grid-template-columns: 2fr 1fr;
+           align-items: start;
+       }
+       .portada {
+           grid-template-columns: repeat(2, 1fr);
+       }
+       #rutas {
+           grid-template-columns: repeat(3, 1fr);
+       }
+   }
