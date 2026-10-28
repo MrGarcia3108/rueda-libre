@@ -194,3 +194,22 @@ Conflictos y soluciones
  3  reglas de cuadrícula antiguas   Eliminé las reglas #rutas y .portada 
 
 Bootstrap se carga antes que styles.css y los div.row y div.col-* son obligatorios en la grilla de Bootstrap.
+
+Comparativa final: v1.5 a v2.0
+
+                             v1.5 (CSS propio)                                                v2.0-beta (Bootstrap) 
+Líneas de styles.css         Aproximado de 550 lineas de codigo(sin contar los comentarios)   aproximado de 300 lineas de codigo(sin contar los comentarios) 
+Reducción                    Obtuve una reducción estimada de entre 300 y 200 líneas de código en los estilos, con la eliminación y modificación de código .
+Tiempo invertido(Propio)     No tengo el tiempo exacto trabajado pero la mitad de la primera semana, hasta el dia 2 de la semana 2 de html y css se trabaja en su mayoria con css y mas lo que adelante desde casa.
+Tiempo invertido(Bootstrap)  De momento llevo todo un dia modificando la pagina a Bootstrap y estoy intentando que se vea casi igual a lo que llevaba en CSS propio. 
+
+Ventajas 
+- Me permitió organizar mejor la página sin tener que escribir tantas reglas de CSS .
+- Clases como row, col-md-6 y col-lg-4 facilitan la distribución y ahorraron tiempo al adaptar el diseño a celulares y computadores.
+- Los botones y formularios ya tenían estilos definidos, lo que ayudó a mantener una apariencia más ordenada.
+Desventajas 
+- Algunos elementos, como los títulos y formularios, tomaron estilos predeterminados que tuve que modificar para adaptarlo a mis estilos.
+- El HTML quedó con más clases y contenedores, por lo que en el código se veía más largo.
+
+Conclusión
+Bootstrap sí me ayudó a trabajar más rápido, al organizar las columnas y adaptar la página a diferentes pantallas. Aunque tuve que corregir estilos y agregar varias clases, me ahorró tiempo al no tener que escribir todo el CSS.

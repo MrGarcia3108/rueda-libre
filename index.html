@@ -12,19 +12,23 @@
 </head>
 <body>
     <header>
-        <h1>Rueda libre | Alquiler de bicicletas en Medellín</h1>
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
-                <li><a href="paginas/tarifas.html">Tarifas y Rutas</a></li>
-                <li><a href="paginas/reservas.html">Reservas</a></li>
-                <li><a href="#encuentranos">Encuéntranos</a></li>
-            </ul>
-        </nav>
-        <img id="logo" src="img/logo.png" alt="" width="300">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-center text-center text-md-start gap-3">
+                <h1 class="mb-0">Rueda libre | Alquiler de bicicletas en Medellín</h1>
+                <nav>
+                    <ul id="menu" class="d-flex flex-wrap justify-content-center gap-2 list-unstyled mb-0">
+                        <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
+                        <li><a href="paginas/tarifas.html">Tarifas y Rutas</a></li>
+                        <li><a href="paginas/reservas.html">Reservas</a></li>
+                        <li><a href="#encuentranos">Encuéntranos</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <img id="logo" src="img/logo.png" alt="" width="300" class="d-block mx-auto mx-md-0 mt-3">
+        </div>
     </header>
 
-    <main>
+    <main class="container">
         <section id="portada">
             <div class="row align-items-center g-4">
                 <div class="col-12 col-md-6">
@@ -238,9 +242,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Rueda libre. Alquiler de bicicletas en Medellín.</p>
-        <address>Contacto: <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></address>
-        <p>Horario: lunes a viernes, 7:00 a. m. a 7:00 p. m. Sábados, domingos y festivos, 6:00 a. m. a 2:00 p. m.</p>
+        <div class="container">
+            <div class="row g-4">
+                <p class="col-12 col-md-4 mb-0">&copy; 2026 Rueda libre. Alquiler de bicicletas en Medellín.</p>
+                <address class="col-12 col-md-4 mb-0">Contacto: <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></address>
+                <p class="col-12 col-md-4 mb-0">Horario: lunes a viernes, 7:00 a. m. a 7:00 p. m. Sábados, domingos y festivos, 6:00 a. m. a 2:00 p. m.</p>
+            </div>
+        </div>
         <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </footer>
 

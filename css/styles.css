@@ -1,14 +1,14 @@
 /* 
-   1. Variables (y puente con Bootstrap)
-   2. Base
-   3. Navegación (encabezado y menú)
-   4. Componentes
-   5. Formulario
-   6. Layout de reservas
-   7. Responsive (mobile-first)
-   8. Reglas desactivadas 
+   1. Variables (puente con Bootstrap)
+   2. Base: tipografía y color
+   3. Encabezado, menú y pie (aspecto)
+   4. Componentes: botones, tarjetas, tablas, WhatsApp
+   5. Formulario (aspecto)
+   6. Responsive
 */
-/* ===== 1. VARIABLES ===== */
+
+
+/* 1. VARIABLES */
 :root {
     /* Colores de marca */
     --color-verde-ruta: #1E7A4F;
@@ -28,7 +28,7 @@
     --espacio-l: 2rem;
 }
 
-/* Puente con Bootstrap: */
+/* Puente con Bootstrap:*/
 :root {
     --bs-body-font-family: var(--fuente-texto);
     --bs-body-color: var(--color-azul-noche);
@@ -40,12 +40,7 @@
 }
 
 
-/* ===== 2. BASE ===== */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-/* Imágenes fluidas: */
+/* 2. BASE  */
 img {
     max-width: 100%;
     height: auto;
@@ -64,26 +59,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* Tamaños de títulos: */
+/* Tamaños de títulos iguales en las tres páginas */
 h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.17rem; }
-
-header, footer {
-    background-color: var(--color-azul-noche);
-    color: var(--color-blanco);
-    padding: var(--espacio-m);
-}
-
-header a, footer a {
-    color: var(--color-blanco);
-}
-
-main {
-    max-width: 60rem;
-    margin: 0 auto;
-    padding-inline: var(--espacio-m);
-}
 
 section, aside {
     margin-block: var(--espacio-l);
@@ -115,57 +94,30 @@ button:focus {
     outline-offset: 2px;
 }
 
-/* En el pie  */
+/* En el pie el foco usa Naranja Pedal */
 footer a:focus {
     outline: 3px solid var(--color-naranja-pedal);
     outline-offset: 2px;
 }
 
 
-/* ===== 3. NAVEGACIÓN ===== */
-
-/* Encabezado (base móvil):*/
-header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    align-content: flex-start;
-    gap: var(--espacio-m);
+/*3. ENCABEZADO, MENÚ Y PIE  */
+header, footer {
+    background-color: var(--color-azul-noche);
+    color: var(--color-blanco);
+    padding: var(--espacio-m);
 }
 
-header h1 {
-    flex: 1 1 100%;
-    margin: 0;
+header a, footer a {
+    color: var(--color-blanco);
 }
 
-header nav {
-    flex: 1 1 100%;
+/* Espacio extra abajo para que el botón fijo de WhatsApp no tape el pie */
+footer {
+    padding-bottom: calc(var(--espacio-l) * 2.5);
 }
 
-/* El logo y el saludo ocupan su propia fila */
-header > img {
-    flex: 0 0 100%;
-    height: 6rem;
-    object-fit: contain;
-    object-position: center;
-}
-
-header > p {
-    flex: 0 0 100%;
-    margin: 0;
-}
-
-/* Menú */
 #menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--espacio-s);
-    list-style: none;
-    margin: 0;
     padding: var(--espacio-s);
     background-color: var(--color-crema);
 }
@@ -184,6 +136,7 @@ header > p {
     border-bottom-color: var(--color-verde-ruta);
 }
 
+/* Después de .activo: gana el orden */
 #menu a:hover,
 #menu a:focus {
     color: var(--color-blanco);
@@ -192,24 +145,6 @@ header > p {
 
 
 /* ===== 4. COMPONENTES ===== */
-
-/* Pie de página: una columna en móvil*/
-footer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: var(--espacio-l);
-    padding-bottom: calc(var(--espacio-l) * 2.5);
-}
-
-footer > p,
-footer > address {
-    flex: 1 1 100%;
-    margin: 0;
-    font-style: normal;
-}
 
 /* Botones */
 button {
@@ -260,7 +195,6 @@ button:hover {
     margin-block: var(--espacio-m) 0;
 }
 
-/* Etiqueta "Nuevo":  */
 .etiqueta-nuevo {
     position: absolute;
     top: var(--espacio-s);
@@ -274,8 +208,8 @@ button:hover {
     border-radius: var(--espacio-s);
 }
 
-/* Modelos de la flota */
-.modelo img {
+.modelo img,
+#rutas img {
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
@@ -285,12 +219,7 @@ button:hover {
     font-weight: 700;
 }
 
-/* Fotos de las rutas */
-#rutas img {
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-}
-
+/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -298,14 +227,12 @@ table {
     font-size: 0.8rem;
 }
 
-
 th, td {
     padding: calc(var(--espacio-s) / 2);
     border: 1px solid var(--color-gris-asfalto);
     text-align: left;
     overflow-wrap: anywhere;
 }
-
 
 thead th {
     background-color: var(--color-azul-noche);
@@ -341,12 +268,22 @@ thead th {
 }
 
 
-/* ===== 5. FORMULARIO (USADO POR reservas.html) ===== */
+/*5. FORMULARIO  */
 fieldset {
     min-width: 0;
     margin-block-end: var(--espacio-l);
     padding: var(--espacio-m);
     border: 1px solid var(--color-gris-asfalto);
+}
+
+/* Bootstrap flota la leyenda dentro del cuadro; aquí vuelve sobre el borde */
+legend {
+    float: none;
+    width: auto;
+    padding-inline: var(--espacio-s);
+    font-family: var(--fuente-titulos);
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 fieldset p {
@@ -368,71 +305,13 @@ textarea {
     font: inherit;
 }
 
-textarea {
-    resize: vertical;
-}
-
 input[type="radio"] + label {
     margin-inline-end: var(--espacio-m);
 }
 
-/* Fila de campos cortos con Flexbox (documento y celular) */
-.fila-campos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espacio-m);
-    margin-block: var(--espacio-m);
-}
 
-.fila-campos > p {
-    flex: 1 1 12rem;
-    margin: 0;
-}
-
-
-/* ===== 6. LAYOUT DE RESERVAS (USADO POR reservas.html) ===== */
-.layout-reservas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-l);
-}
-
-.layout-reservas > * {
-    min-width: 0;
-    margin-block: 0;
-}
-
-
-/* ===== 7. RESPONSIVE (mobile-first) ===== */
-
-/* Tableta: desde 768px */
+/* 6. RESPONSIVE (mobile-first) */
 @media (min-width: 768px) {
-    /* Encabezado: nombre a la izquierda, menú a la derecha */
-    header {
-        justify-content: space-between;
-        text-align: left;
-    }
-
-    header h1,
-    header nav {
-        flex: 0 1 auto;
-    }
-
-    header > img {
-        object-position: left center;
-    }
-
-    #menu {
-        justify-content: flex-end;
-    }
-
-    /* Pie: bloques en fila */
-    footer > p,
-    footer > address {
-        flex: 1 1 0;
-    }
-
-    /* Tablas más cómodas */
     table {
         font-size: 1rem;
     }
@@ -440,111 +319,4 @@ input[type="radio"] + label {
     th, td {
         padding: var(--espacio-s) var(--espacio-m);
     }
-
-    /* USADO POR reservas.html: formulario y contacto en proporción 2:1 */
-    .layout-reservas {
-        grid-template-columns: 2fr 1fr;
-        align-items: start;
-    }
-
-    .layout-reservas > #formulario-reserva {
-        grid-column: 1;
-        grid-row: 1 / span 2;
-    }
-
-    .layout-reservas > #contacto,
-    .layout-reservas > #horarios {
-        grid-column: 2;
-    }
 }
-
-/* Escritorio: desde 1200px */
-@media (min-width: 1200px) {
-    main {
-        max-width: 75rem;
-    }
-
-    header,
-    footer {
-        padding-inline: var(--espacio-l);
-    }
-}
-
-
-/* ===== 8. REGLAS DESACTIVADAS =====
-Portada 
-   .portada {
-       display: grid;
-       grid-template-columns: 1fr;
-       gap: var(--espacio-l);
-       align-items: center;
-       min-height: 50vh;
-   }
-   .portada img {
-       width: 100%;
-       height: auto;
-       border-radius: var(--espacio-s);
-   }
-Servicios y flota
-   #flota {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-       gap: var(--espacio-m);
-   }
-   #servicios > h2,
-   #flota > h2 {
-       grid-column: 1 / -1;
-       margin: 0;
-   }
-Tarjeta de modelo
-   .modelo {
-       display: flex;
-       flex-direction: column;
-       justify-content: flex-start;
-       gap: var(--espacio-s);
-   }
-   .modelo h3,
-   .modelo p {
-       margin: 0;
-   }
-   .modelo .btn-reservar {
-       margin-top: auto;
-       text-align: center;
-   }
-Galería de rutas
-   #rutas {
-       display: grid;
-       grid-template-columns: 1fr;
-       gap: var(--espacio-m);
-   }
-   #rutas > h2 {
-       grid-column: 1 / -1;
-       margin: 0;
-   }
-
-Tablas con desplazamiento
-   table {
-       display: block;
-       overflow-x: auto;
-   }
-Media queries antiguas
-   @media (min-width: 576px) {
-       footer > p,
-       footer > address {
-           flex: 1 1 calc(50% - var(--espacio-l));
-       }
-   }
-   @media (min-width: 768px) {
-       .portada {
-           grid-template-columns: repeat(2, 1fr);
-           min-height: 50vh;
-       }
-       #rutas {
-           grid-template-columns: repeat(3, 1fr);
-       }
-       table {
-           display: table;
-           overflow-x: visible;
-       }
-   }
-*/
