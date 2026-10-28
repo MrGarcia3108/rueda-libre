@@ -1,15 +1,13 @@
-/* =====================================================
-   Rueda libre · styles.css
-   1. Variables
+/* 
+   1. Variables (y puente con Bootstrap)
    2. Base
    3. Navegación (encabezado y menú)
-   4. Componentes (pie, botones, tarjetas, tablas, flota, WhatsApp)
+   4. Componentes
    5. Formulario
-   6. Layouts de página (portada, rutas, reservas)
-   7. Responsive (media queries)
-   ===================================================== */
-
-
+   6. Layout de reservas
+   7. Responsive (mobile-first)
+   8. Reglas desactivadas 
+*/
 /* ===== 1. VARIABLES ===== */
 :root {
     /* Colores de marca */
@@ -30,12 +28,24 @@
     --espacio-l: 2rem;
 }
 
+/* Puente con Bootstrap: */
+:root {
+    --bs-body-font-family: var(--fuente-texto);
+    --bs-body-color: var(--color-azul-noche);
+    --bs-body-bg: var(--color-crema);
+    --bs-success-rgb: 30, 122, 79;     /* Verde Ruta */
+    --bs-warning-rgb: 243, 154, 43;    /* Naranja Pedal */
+    --bs-dark-rgb: 20, 33, 61;         /* Azul Noche */
+    --bs-secondary-rgb: 91, 100, 112;  /* Gris Asfalto */
+}
+
 
 /* ===== 2. BASE ===== */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+/* Imágenes fluidas: */
 img {
     max-width: 100%;
     height: auto;
@@ -53,6 +63,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
     font-weight: 700;
 }
+
+/* Tamaños de títulos: */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.17rem; }
 
 header, footer {
     background-color: var(--color-azul-noche);
@@ -89,7 +104,7 @@ main a:hover {
     text-decoration-thickness: 3px;
 }
 
-/* Indicador de foco: una sola regla para todos los controles */
+/* Indicador de foco: */
 main a:focus,
 #menu a:focus,
 input:focus,
@@ -100,7 +115,7 @@ button:focus {
     outline-offset: 2px;
 }
 
-/* En el pie (fondo oscuro) el foco usa Naranja Pedal */
+/* En el pie  */
 footer a:focus {
     outline: 3px solid var(--color-naranja-pedal);
     outline-offset: 2px;
@@ -109,7 +124,7 @@ footer a:focus {
 
 /* ===== 3. NAVEGACIÓN ===== */
 
-/* Encabezado: nombre en un extremo, menú en el otro */
+/* Encabezado (base móvil):*/
 header {
     display: flex;
     flex-direction: row;
@@ -169,7 +184,6 @@ header > p {
     border-bottom-color: var(--color-verde-ruta);
 }
 
-/* Después de .activo: igual especificidad, gana el orden */
 #menu a:hover,
 #menu a:focus {
     color: var(--color-blanco);
@@ -179,7 +193,7 @@ header > p {
 
 /* ===== 4. COMPONENTES ===== */
 
-/* Pie de página: bloques en fila (espacio extra abajo para el botón fijo) */
+/* Pie de página: una columna en móvil*/
 footer {
     display: flex;
     flex-direction: row;
@@ -228,7 +242,7 @@ button:hover {
     background-color: var(--color-azul-noche);
 }
 
-/* Tarjetas (position: relative ancla la etiqueta) */
+/* Tarjetas */
 .tarjeta {
     position: relative;
     padding: var(--espacio-m);
@@ -246,7 +260,7 @@ button:hover {
     margin-block: var(--espacio-m) 0;
 }
 
-/* Etiqueta "Nuevo": sale del flujo, no desplaza el contenido */
+/* Etiqueta "Nuevo":  */
 .etiqueta-nuevo {
     position: absolute;
     top: var(--espacio-s);
@@ -260,33 +274,7 @@ button:hover {
     border-radius: var(--espacio-s);
 }
 
-/* Servicios y flota: cuadrícula adaptable con Grid */
-#servicios,
-#flota {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: var(--espacio-m);
-}
-
-#servicios > h2,
-#flota > h2 {
-    grid-column: 1 / -1;
-    margin: 0;
-}
-
-/* Tarjeta de modelo: Flexbox en columna */
-.modelo {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: var(--espacio-s);
-}
-
-.modelo h3,
-.modelo p {
-    margin: 0;
-}
-
+/* Modelos de la flota */
 .modelo img {
     aspect-ratio: 4 / 3;
     object-fit: cover;
@@ -297,13 +285,12 @@ button:hover {
     font-weight: 700;
 }
 
-/* El enlace queda siempre al final de la tarjeta */
-.modelo .btn-reservar {
-    margin-top: auto;
-    text-align: center;
+/* Fotos de las rutas */
+#rutas img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 
-/* Tablas: en pantallas pequeñas se desplazan dentro de sí mismas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -311,12 +298,14 @@ table {
     font-size: 0.8rem;
 }
 
+
 th, td {
     padding: calc(var(--espacio-s) / 2);
     border: 1px solid var(--color-gris-asfalto);
     text-align: left;
     overflow-wrap: anywhere;
 }
+
 
 thead th {
     background-color: var(--color-azul-noche);
@@ -345,7 +334,6 @@ thead th {
     background-color: var(--color-azul-noche);
 }
 
-/* Anillo blanco + contorno oscuro: se ve sobre fondo claro y oscuro */
 .btn-whatsapp:focus {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 2px;
@@ -353,7 +341,7 @@ thead th {
 }
 
 
-/* ===== 5. FORMULARIO ===== */
+/* ===== 5. FORMULARIO (USADO POR reservas.html) ===== */
 fieldset {
     min-width: 0;
     margin-block-end: var(--espacio-l);
@@ -402,41 +390,7 @@ input[type="radio"] + label {
 }
 
 
-/* ===== 6. LAYOUTS DE PÁGINA ===== */
-
-/* Portada: dos columnas con Grid, texto centrado verticalmente */
-.portada {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-l);
-    align-items: center;
-    min-height: 50vh;
-}
-
-.portada img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--espacio-s);
-}
-
-/* Galería de rutas: tres tarjetas en una fila */
-#rutas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-m);
-}
-
-#rutas > h2 {
-    grid-column: 1 / -1;
-    margin: 0;
-}
-
-#rutas img {
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-}
-
-/* Reservas: formulario y contacto en proporción 2:1 */
+/* ===== 6. LAYOUT DE RESERVAS (USADO POR reservas.html) ===== */
 .layout-reservas {
     display: grid;
     grid-template-columns: 1fr;
@@ -453,6 +407,7 @@ input[type="radio"] + label {
 
 /* Tableta: desde 768px */
 @media (min-width: 768px) {
+    /* Encabezado: nombre a la izquierda, menú a la derecha */
     header {
         justify-content: space-between;
         text-align: left;
@@ -486,16 +441,7 @@ input[type="radio"] + label {
         padding: var(--espacio-s) var(--espacio-m);
     }
 
-    /* Layouts de página */
-    .portada {
-        grid-template-columns: repeat(2, 1fr);
-        min-height: 50vh;
-    }
-
-    #rutas {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
+    /* USADO POR reservas.html: formulario y contacto en proporción 2:1 */
     .layout-reservas {
         grid-template-columns: 2fr 1fr;
         align-items: start;
@@ -523,3 +469,82 @@ input[type="radio"] + label {
         padding-inline: var(--espacio-l);
     }
 }
+
+
+/* ===== 8. REGLAS DESACTIVADAS =====
+Portada 
+   .portada {
+       display: grid;
+       grid-template-columns: 1fr;
+       gap: var(--espacio-l);
+       align-items: center;
+       min-height: 50vh;
+   }
+   .portada img {
+       width: 100%;
+       height: auto;
+       border-radius: var(--espacio-s);
+   }
+Servicios y flota
+   #flota {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+       gap: var(--espacio-m);
+   }
+   #servicios > h2,
+   #flota > h2 {
+       grid-column: 1 / -1;
+       margin: 0;
+   }
+Tarjeta de modelo
+   .modelo {
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       gap: var(--espacio-s);
+   }
+   .modelo h3,
+   .modelo p {
+       margin: 0;
+   }
+   .modelo .btn-reservar {
+       margin-top: auto;
+       text-align: center;
+   }
+Galería de rutas
+   #rutas {
+       display: grid;
+       grid-template-columns: 1fr;
+       gap: var(--espacio-m);
+   }
+   #rutas > h2 {
+       grid-column: 1 / -1;
+       margin: 0;
+   }
+
+Tablas con desplazamiento
+   table {
+       display: block;
+       overflow-x: auto;
+   }
+Media queries antiguas
+   @media (min-width: 576px) {
+       footer > p,
+       footer > address {
+           flex: 1 1 calc(50% - var(--espacio-l));
+       }
+   }
+   @media (min-width: 768px) {
+       .portada {
+           grid-template-columns: repeat(2, 1fr);
+           min-height: 50vh;
+       }
+       #rutas {
+           grid-template-columns: repeat(3, 1fr);
+       }
+       table {
+           display: table;
+           overflow-x: visible;
+       }
+   }
+*/

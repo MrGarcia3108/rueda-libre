@@ -185,3 +185,12 @@ fs-4                   Tamaño de letra mayor, sin etiquetas de título
 text-bg-dark           Fondo oscuro con texto de contraste automático
 
 A comparacion con un css propio, Bootstrap agiliza mucho el trabajo que es darle a cada caracter un estilo
+
+Integración de Bootstrap
+
+Conflictos y soluciones
+ 1  tamaño de títulos               Declaré font-size de h1–h3 en styles.css, que carga después 
+ 2  colores de utilidades           Redefiní --bs-*-rgb en mi :root 
+ 3  reglas de cuadrícula antiguas   Eliminé las reglas #rutas y .portada 
+
+Bootstrap se carga antes que styles.css y los div.row y div.col-* son obligatorios en la grilla de Bootstrap.
