@@ -12,18 +12,25 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-center text-center text-md-start gap-3">
-                <h1 class="mb-0">Reserva tu bicicleta | Rueda libre</h1>
-                <nav>
-                    <ul id="menu" class="d-flex flex-wrap justify-content-center gap-2 list-unstyled mb-0">
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="tarifas.html">Tarifas y Rutas</a></li>
-                        <li><a href="reservas.html" class="activo" aria-current="page">Reservas</a></li>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo.png" alt="Rueda libre, ir al inicio">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir o cerrar el menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas y Rutas</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a></li>
                     </ul>
-                </nav>
+                </div>
             </div>
-            <img id="logo" src="../img/logo.png" alt="" width="300" class="d-block mx-auto mx-md-0 mt-3">
+        </nav>
+        <div class="container pb-3">
+            <h1 class="mb-0">Reserva tu bicicleta | Rueda libre</h1>
         </div>
     </header>
 
@@ -126,7 +133,7 @@
                             </p>
                         </fieldset>
 
-                        <button type="submit" name="enviar" value="reservar">Enviar reserva</button>
+                        <button type="submit" name="enviar" value="reservar" class="btn btn-success btn-lg">Enviar reserva</button>
                     </form>
                 </section>
             </div>

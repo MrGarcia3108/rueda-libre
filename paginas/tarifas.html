@@ -12,18 +12,25 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-center text-center text-md-start gap-3">
-                <h1 class="mb-0">Rueda libre | Alquiler de bicicletas en Medellín</h1>
-                <nav>
-                    <ul id="menu" class="d-flex flex-wrap justify-content-center gap-2 list-unstyled mb-0">
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="tarifas.html" class="activo" aria-current="page">Tarifas y Rutas</a></li>
-                        <li><a href="reservas.html">Reservas</a></li>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo.png" alt="Rueda libre, ir al inicio">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir o cerrar el menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifas.html">Tarifas y Rutas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
                     </ul>
-                </nav>
+                </div>
             </div>
-            <img id="logo" src="../img/logo.png" alt="" width="300" class="d-block mx-auto mx-md-0 mt-3">
+        </nav>
+        <div class="container pb-3">
+            <h1 class="mb-0">Rueda libre | Alquiler de bicicletas en Medellín</h1>
         </div>
     </header>
 
@@ -67,8 +74,8 @@
                             </tbody>
                         </table>
                         <p>Todas las tarifas incluyen casco y candado.</p>
-                        <ul>
-                            <li><a href="reservas.html" class="btn-reservar">Reserva ahora una bicicleta</a></li>
+                        <ul class="list-unstyled">
+                            <li><a href="reservas.html" class="btn btn-success">Reserva ahora una bicicleta</a></li>
                         </ul>
                     </section>
 
@@ -109,8 +116,8 @@
                             </tbody>
                         </table>
                         <p>Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
-                        <ul>
-                            <li><a href="reservas.html" class="btn-reservar">Reserva ahora un recorrido</a></li>
+                        <ul class="list-unstyled">
+                            <li><a href="reservas.html" class="btn btn-success">Reserva ahora un recorrido</a></li>
                         </ul>
                     </section>
                 </section>

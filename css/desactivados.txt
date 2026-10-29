@@ -30,6 +30,63 @@ Distribución que ahora resuelve Bootstrap (container, row, col-*,
        height: 6rem;
        object-fit: contain;
    }
+   #menu a:focus,
+   
+   #menu {
+    padding: var(--espacio-s);
+    background-color: var(--color-crema);
+}
+
+#menu a {
+    display: block;
+    padding: var(--espacio-s) var(--espacio-m);
+    color: var(--color-gris-asfalto);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+#menu a.activo {
+    color: var(--color-verde-ruta);
+    font-weight: 600;
+    border-bottom-color: var(--color-verde-ruta);
+}
+
+/* Después de .activo: gana el orden */
+#menu a:hover,
+#menu a:focus {
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+}
+
+button {
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-blanco);
+    background-color: var(--color-verde-ruta);
+    border: none;
+    padding: var(--espacio-m) var(--espacio-l);
+}
+
+button:hover {
+    background-color: var(--color-azul-noche);
+}
+
+.btn-reservar {
+    display: inline-block;
+    padding: var(--espacio-s) var(--espacio-l);
+    color: var(--color-blanco);
+    background-color: var(--color-verde-ruta);
+    font-family: var(--fuente-texto);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-reservar:hover,
+.btn-reservar:focus {
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+}
 
    --- Menú (ahora: d-flex flex-wrap gap-2 list-unstyled) ---
    #menu {

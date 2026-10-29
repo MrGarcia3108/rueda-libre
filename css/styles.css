@@ -1,7 +1,7 @@
 /* 
    1. Variables (puente con Bootstrap)
    2. Base: tipografía y color
-   3. Encabezado, menú y pie (aspecto)
+   3. Encabezado, navbar y pie (aspecto)
    4. Componentes: botones, tarjetas, tablas, WhatsApp
    5. Formulario (aspecto)
    6. Responsive
@@ -85,7 +85,6 @@ main a:hover {
 
 /* Indicador de foco: */
 main a:focus,
-#menu a:focus,
 input:focus,
 select:focus,
 textarea:focus,
@@ -101,7 +100,7 @@ footer a:focus {
 }
 
 
-/*3. ENCABEZADO, MENÚ Y PIE  */
+/* 3. ENCABEZADO, NAVBAR Y PIE  */
 header, footer {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
@@ -117,64 +116,94 @@ footer {
     padding-bottom: calc(var(--espacio-l) * 2.5);
 }
 
-#menu {
-    padding: var(--espacio-s);
-    background-color: var(--color-crema);
+/* Logo de la navbar: la altura se fija aquí porque "img { height: auto }"
+   anula el atributo height del HTML */
+.navbar-brand img {
+    height: 3rem;
+    width: auto;
 }
 
-#menu a {
-    display: block;
-    padding: var(--espacio-s) var(--espacio-m);
-    color: var(--color-gris-asfalto);
-    text-decoration: none;
+/* Enlaces de la navbar: colores de marca sobre Azul Noche */
+.navbar .nav-link {
+    color: var(--color-blanco);
     border-bottom: 3px solid transparent;
 }
 
-#menu a.activo {
-    color: var(--color-verde-ruta);
-    font-weight: 600;
-    border-bottom-color: var(--color-verde-ruta);
+.navbar .nav-link:hover {
+    color: var(--color-blanco);
+    border-bottom-color: var(--color-blanco);
 }
 
-/* Después de .activo: gana el orden */
-#menu a:hover,
-#menu a:focus {
+/* Página actual: negrita y subrayado naranja (no depende solo del color) */
+.navbar .nav-link.active {
     color: var(--color-blanco);
-    background-color: var(--color-azul-noche);
+    font-weight: 600;
+    border-bottom-color: var(--color-naranja-pedal);
+}
+
+.navbar .nav-link:focus-visible {
+    outline: 3px solid var(--color-naranja-pedal);
+    outline-offset: 2px;
+}
+
+.navbar-toggler:focus {
+    outline: 3px solid var(--color-naranja-pedal);
+    outline-offset: 2px;
+    box-shadow: none;
 }
 
 
 /* ===== 4. COMPONENTES ===== */
 
-/* Botones */
-button {
-    font-family: var(--fuente-texto);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-blanco);
-    background-color: var(--color-verde-ruta);
-    border: none;
-    padding: var(--espacio-m) var(--espacio-l);
-}
-
-button:hover {
-    background-color: var(--color-azul-noche);
-}
-
-.btn-reservar {
-    display: inline-block;
-    padding: var(--espacio-s) var(--espacio-l);
-    color: var(--color-blanco);
-    background-color: var(--color-verde-ruta);
+/* Botones: componente de Bootstrap con los colores de la marca */
+.btn {
     font-family: var(--fuente-texto);
     font-weight: 600;
-    text-decoration: none;
 }
 
-.btn-reservar:hover,
-.btn-reservar:focus {
-    color: var(--color-blanco);
-    background-color: var(--color-azul-noche);
+.btn-success {
+    --bs-btn-bg: var(--color-verde-ruta);
+    --bs-btn-border-color: var(--color-verde-ruta);
+    --bs-btn-color: var(--color-blanco);
+    --bs-btn-hover-bg: var(--color-azul-noche);
+    --bs-btn-hover-border-color: var(--color-azul-noche);
+    --bs-btn-hover-color: var(--color-blanco);
+    --bs-btn-active-bg: var(--color-azul-noche);
+    --bs-btn-active-border-color: var(--color-azul-noche);
+    --bs-btn-active-color: var(--color-blanco);
+}
+
+.btn-outline-success {
+    --bs-btn-color: var(--color-verde-ruta);
+    --bs-btn-border-color: var(--color-verde-ruta);
+    --bs-btn-hover-bg: var(--color-verde-ruta);
+    --bs-btn-hover-border-color: var(--color-verde-ruta);
+    --bs-btn-hover-color: var(--color-blanco);
+    --bs-btn-active-bg: var(--color-verde-ruta);
+    --bs-btn-active-border-color: var(--color-verde-ruta);
+    --bs-btn-active-color: var(--color-blanco);
+}
+
+.btn-warning {
+    --bs-btn-bg: var(--color-naranja-pedal);
+    --bs-btn-border-color: var(--color-naranja-pedal);
+    --bs-btn-color: var(--color-azul-noche);
+    --bs-btn-hover-bg: var(--color-crema);
+    --bs-btn-hover-border-color: var(--color-crema);
+    --bs-btn-hover-color: var(--color-azul-noche);
+    --bs-btn-active-bg: var(--color-crema);
+    --bs-btn-active-border-color: var(--color-crema);
+    --bs-btn-active-color: var(--color-azul-noche);
+}
+
+/* Foco visible con teclado; sobre fondo oscuro el contorno es blanco */
+.btn:focus-visible {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+}
+
+.text-bg-dark .btn:focus-visible {
+    outline-color: var(--color-blanco);
 }
 
 /* Tarjetas */
