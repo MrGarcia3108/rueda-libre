@@ -39,98 +39,113 @@
             <div class="col-12 col-md-8">
                 <section id="formulario-reserva">
                     <h2>Formulario de reserva</h2>
-                    <form action="#" method="post">
+
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        Recuerda traer tu documento de identidad original al recoger la bicicleta y revisar las políticas de alquiler antes de reservar.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar aviso"></button>
+                    </div>
+
+                    <form class="needs-validation" novalidate action="#" method="post">
 
                         <fieldset>
                             <legend>Tus datos</legend>
-                            <p>
-                                <label for="nombre">Nombre completo:</label>
-                                <input type="text" id="nombre" name="nombre"
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre"
                                        required minlength="3"
                                        title="Escribe tu nombre completo (mínimo 3 caracteres).">
-                            </p>
-                            <p>
-                                <label for="correo">Correo electrónico:</label>
-                                <input type="email" id="correo" name="correo"
+                                <div class="invalid-feedback">Escribe tu nombre completo, con al menos 3 letras.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="correo" name="correo"
                                        required
                                        title="Escribe un correo válido. Ejemplo: nombre@correo.com">
-                            </p>
+                                <div class="invalid-feedback">Escribe un correo con este formato: nombre@correo.com.</div>
+                            </div>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <p class="mb-0">
-                                        <label for="documento">Documento:</label>
-                                        <input type="text" id="documento" name="documento"
-                                               required minlength="6" maxlength="10"
-                                               pattern="[0-9]{6,10}" inputmode="numeric"
-                                               aria-describedby="ayuda-documento"
-                                               title="Solo números, entre 6 y 10 dígitos. Ejemplo: 1020304050">
-                                        <small id="ayuda-documento">Solo números, de 6 a 10 dígitos.</small>
-                                    </p>
+                                    <label for="documento" class="form-label">Documento</label>
+                                    <input type="text" class="form-control" id="documento" name="documento"
+                                           required minlength="6" maxlength="10"
+                                           pattern="[0-9]{6,10}" inputmode="numeric"
+                                           aria-describedby="ayuda-documento"
+                                           title="Solo números, entre 6 y 10 dígitos. Ejemplo: 1020304050">
+                                    <div id="ayuda-documento" class="form-text">Solo números, de 6 a 10 dígitos.</div>
+                                    <div class="invalid-feedback">Escribe solo números, entre 6 y 10 dígitos, sin puntos ni espacios.</div>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <p class="mb-0">
-                                        <label for="telefono">Celular:</label>
-                                        <input type="tel" id="telefono" name="telefono"
-                                               required minlength="10" maxlength="10"
-                                               pattern="3[0-9]{9}" inputmode="numeric"
-                                               aria-describedby="ayuda-celular"
-                                               title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567">
-                                        <small id="ayuda-celular">10 dígitos, empieza por 3.</small>
-                                    </p>
+                                    <label for="telefono" class="form-label">Celular</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono"
+                                           required minlength="10" maxlength="10"
+                                           pattern="3[0-9]{9}" inputmode="numeric"
+                                           aria-describedby="ayuda-celular"
+                                           title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567">
+                                    <div id="ayuda-celular" class="form-text">10 dígitos, empieza por 3.</div>
+                                    <div class="invalid-feedback">Escribe 10 dígitos seguidos y que empiecen por 3. Ejemplo: 3001234567.</div>
                                 </div>
                             </div>
                         </fieldset>
 
                         <fieldset>
                             <legend>Tu alquiler</legend>
-                            <fieldset>
-                                <legend>Tipo de bicicleta</legend>
-                                <input type="radio" id="tipo-urbana" name="tipo_bicicleta" value="urbana" required>
-                                <label for="tipo-urbana">Urbana</label>
-                                <input type="radio" id="tipo-montana" name="tipo_bicicleta" value="montana" required>
-                                <label for="tipo-montana">Montaña</label>
-                                <input type="radio" id="tipo-electrica" name="tipo_bicicleta" value="electrica" required>
-                                <label for="tipo-electrica">Eléctrica</label>
+                            <fieldset class="border-0 p-0 mb-3">
+                                <legend class="fs-6">Tipo de bicicleta</legend>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="tipo-urbana" name="tipo_bicicleta" value="urbana" required>
+                                    <label class="form-check-label" for="tipo-urbana">Urbana</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="tipo-montana" name="tipo_bicicleta" value="montana" required>
+                                    <label class="form-check-label" for="tipo-montana">Montaña</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="tipo-electrica" name="tipo_bicicleta" value="electrica" required>
+                                    <label class="form-check-label" for="tipo-electrica">Eléctrica</label>
+                                    <div class="invalid-feedback">Elige un tipo de bicicleta para continuar.</div>
+                                </div>
                             </fieldset>
-                            <p>
-                                <label for="plan">Plan:</label>
-                                <select id="plan" name="plan" required>
+                            <div class="mb-3">
+                                <label for="plan" class="form-label">Plan</label>
+                                <select class="form-select" id="plan" name="plan" required>
                                     <option value="">Selecciona un plan</option>
                                     <option value="1-hora">1 hora</option>
                                     <option value="medio-dia">Medio día (4 h)</option>
                                     <option value="dia-completo">Día completo</option>
                                 </select>
-                            </p>
+                                <div class="invalid-feedback">Selecciona un plan de la lista: 1 hora, medio día o día completo.</div>
+                            </div>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <p class="mb-0">
-                                        <label for="fecha">Fecha del alquiler:</label>
-                                        <input type="date" id="fecha" name="fecha"
-                                               required min="2026-11-01" max="2026-12-31"
-                                               title="Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.">
-                                    </p>
+                                    <label for="fecha" class="form-label">Fecha del alquiler</label>
+                                    <input type="date" class="form-control" id="fecha" name="fecha"
+                                           required min="2026-11-01" max="2026-12-31"
+                                           title="Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.">
+                                    <div class="invalid-feedback">Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.</div>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <p class="mb-0">
-                                        <label for="cantidad">Cantidad de bicicletas:</label>
-                                        <input type="number" id="cantidad" name="cantidad"
-                                               required min="1" max="6" value="1"
-                                               title="Cantidad entre 1 y 6 bicicletas.">
-                                    </p>
+                                    <label for="cantidad" class="form-label">Cantidad de bicicletas</label>
+                                    <input type="number" class="form-control" id="cantidad" name="cantidad"
+                                           required min="1" max="6" value="1"
+                                           title="Cantidad entre 1 y 6 bicicletas.">
+                                    <div class="invalid-feedback">Escribe una cantidad entre 1 y 6 bicicletas.</div>
                                 </div>
                             </div>
                         </fieldset>
 
                         <fieldset>
                             <legend>Confirmación</legend>
-                            <p>
-                                <label for="comentarios">Comentarios (opcional, máximo 300 caracteres):</label>
-                                <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"></textarea>
-                            </p>
-                            <p>
-                                <input type="checkbox" id="acepta" name="acepta_politicas" value="si" required>
-                                <label for="acepta">Acepto las políticas de alquiler.</label>
-                            </p>
+                            <div class="mb-3">
+                                <label for="comentarios" class="form-label">Comentarios (opcional)</label>
+                                <textarea class="form-control" id="comentarios" name="comentarios" rows="4" maxlength="300" aria-describedby="ayuda-comentarios"></textarea>
+                                <div id="ayuda-comentarios" class="form-text">Máximo 300 caracteres.</div>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="acepta" name="acepta_politicas" value="si" required>
+                                <label class="form-check-label" for="acepta">Acepto las políticas de alquiler.</label>
+                                <div class="invalid-feedback">Debes aceptar las políticas de alquiler para poder reservar. Puedes leerlas con el botón de abajo.</div>
+                            </div>
+                            <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal-politicas">Leer las políticas de alquiler</button>
                         </fieldset>
 
                         <button type="submit" name="enviar" value="reservar" class="btn btn-success btn-lg">Enviar reserva</button>
@@ -171,6 +186,44 @@
         <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </footer>
 
+    <div class="modal fade" id="modal-politicas" tabindex="-1" aria-labelledby="titulo-politicas" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="titulo-politicas">Políticas de alquiler</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <ol class="mb-0">
+                        <li>Presenta tu documento de identidad original al recoger la bicicleta.</li>
+                        <li>Revisa la bicicleta con el asesor antes de salir.</li>
+                        <li>Cada 15 minutos de retraso en la devolución tienen un recargo de $5.000.</li>
+                        <li>Los daños por mal uso se cobran según el costo de la reparación.</li>
+                        <li>Los menores de edad deben estar acompañados por un adulto responsable.</li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+    </script>
 </body>
 </html>

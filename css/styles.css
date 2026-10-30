@@ -37,6 +37,10 @@
     --bs-warning-rgb: 243, 154, 43;    /* Naranja Pedal */
     --bs-dark-rgb: 20, 33, 61;         /* Azul Noche */
     --bs-secondary-rgb: 91, 100, 112;  /* Gris Asfalto */
+    --bs-form-valid-color: var(--color-verde-ruta);
+    --bs-form-valid-border-color: var(--color-verde-ruta);
+    --bs-form-invalid-color: #B02A37;
+    --bs-form-invalid-border-color: #B02A37;
 }
 
 
@@ -206,6 +210,11 @@ footer {
     outline-color: var(--color-blanco);
 }
 
+.alert-info {
+    --bs-alert-color: var(--color-azul-noche);
+    --bs-alert-bg: var(--color-blanco);
+    --bs-alert-border-color: var(--color-verde-ruta);
+}
 /* Tarjetas */
 .tarjeta {
     position: relative;
@@ -329,7 +338,7 @@ fieldset {
     border: 1px solid var(--color-gris-asfalto);
 }
 
-/* Bootstrap flota la leyenda dentro del cuadro; aquí vuelve sobre el borde */
+/* aquí vuelve sobre el borde */
 legend {
     float: none;
     width: auto;
@@ -339,27 +348,17 @@ legend {
     font-weight: 700;
 }
 
-fieldset p {
-    margin-block: var(--espacio-m);
+/*se oscurece para que se vea */
+.form-control,
+.form-select,
+.form-check-input {
+    border-color: var(--color-gris-asfalto);
 }
 
-fieldset p > label:first-child {
-    display: block;
-    margin-block-end: var(--espacio-s);
-}
-
-input:not([type="radio"]):not([type="checkbox"]),
-select,
-textarea {
-    display: block;
-    width: 100%;
-    padding: var(--espacio-s);
-    border: 1px solid var(--color-gris-asfalto);
-    font: inherit;
-}
-
-input[type="radio"] + label {
-    margin-inline-end: var(--espacio-m);
+/* Casilla y radio marcados en Verde Ruta */
+.form-check-input:checked {
+    background-color: var(--color-verde-ruta);
+    border-color: var(--color-verde-ruta);
 }
 
 

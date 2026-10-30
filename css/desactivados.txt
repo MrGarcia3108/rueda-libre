@@ -157,6 +157,30 @@ button:hover {
        margin-top: auto;
        text-align: center;
    }
+   
+fieldset p {
+    margin-block: var(--espacio-m);
+}
+
+fieldset p > label:first-child {
+    display: block;
+    margin-block-end: var(--espacio-s);
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: var(--espacio-s);
+    border: 1px solid var(--color-gris-asfalto);
+    font: inherit;
+}
+
+input[type="radio"] + label {
+    margin-inline-end: var(--espacio-m);
+}
+   
 
    --- Media query antigua de layouts ---
    @media (min-width: 768px) {
