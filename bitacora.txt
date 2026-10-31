@@ -214,7 +214,7 @@ Desventajas
 Conclusión
 Bootstrap sí me ayudó a trabajar más rápido, al organizar las columnas y adaptar la página a diferentes pantallas. Aunque tuve que corregir estilos y agregar varias clases, me ahorró tiempo al no tener que escribir todo el CSS.
 
-Cierre de la semana 2
+Cierre de la semana 2 v2.0
 
 Qué construí
 - página aparte con la flota en la grilla y una sección armada solo con utilidades.
