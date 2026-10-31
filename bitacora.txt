@@ -213,3 +213,17 @@ Desventajas
 
 Conclusión
 Bootstrap sí me ayudó a trabajar más rápido, al organizar las columnas y adaptar la página a diferentes pantallas. Aunque tuve que corregir estilos y agregar varias clases, me ahorró tiempo al no tener que escribir todo el CSS.
+
+Cierre de la semana 2
+
+Qué construí
+- página aparte con la flota en la grilla y una sección armada solo con utilidades.
+- migración: inicio, tarifas y reservas con grilla.
+- Navbar y botones: menú colapsable con página actual.
+- Cards y carrusel: tres promociones que rotan.
+- Formulario: validación visual, mensajes por campo, alerta.
+- Personalización: --bs-*, botón principal y variante naranja.
+
+Qué mejoraría
+- Mover el foco al primer campo con error al enviar el formulario.
+- Mejorar la seccion de promociones.

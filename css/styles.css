@@ -28,19 +28,29 @@
     --espacio-l: 2rem;
 }
 
-/* Puente con Bootstrap:*/
+/* Puente con Bootstrap: */
 :root {
     --bs-body-font-family: var(--fuente-texto);
     --bs-body-color: var(--color-azul-noche);
     --bs-body-bg: var(--color-crema);
+
+    /* Color primario*/
+    --bs-primary: var(--color-verde-ruta);
+    --bs-primary-rgb: 30, 122, 79;
+
+    /* Enlaces */
+    --bs-link-color: var(--color-verde-ruta);
+    --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color: var(--color-azul-noche);
+    --bs-link-hover-color-rgb: 20, 33, 61;
+
+    /* Radio de los bordes */
+    --bs-border-radius: var(--espacio-s);
+
     --bs-success-rgb: 30, 122, 79;     /* Verde Ruta */
     --bs-warning-rgb: 243, 154, 43;    /* Naranja Pedal */
     --bs-dark-rgb: 20, 33, 61;         /* Azul Noche */
     --bs-secondary-rgb: 91, 100, 112;  /* Gris Asfalto */
-    --bs-form-valid-color: var(--color-verde-ruta);
-    --bs-form-valid-border-color: var(--color-verde-ruta);
-    --bs-form-invalid-color: #B02A37;
-    --bs-form-invalid-border-color: #B02A37;
 }
 
 
@@ -77,13 +87,7 @@ small {
 }
 
 /* Enlaces del contenido */
-main a {
-    color: var(--color-verde-ruta);
-    text-decoration: underline;
-}
-
 main a:hover {
-    color: var(--color-azul-noche);
     text-decoration-thickness: 3px;
 }
 
@@ -165,41 +169,45 @@ footer {
     font-weight: 600;
 }
 
-.btn-success {
+/* Verde Ruta, active en Azul Noche */
+.btn-primary {
+    --bs-btn-color: var(--color-blanco);
     --bs-btn-bg: var(--color-verde-ruta);
     --bs-btn-border-color: var(--color-verde-ruta);
-    --bs-btn-color: var(--color-blanco);
+    --bs-btn-hover-color: var(--color-blanco);
     --bs-btn-hover-bg: var(--color-azul-noche);
     --bs-btn-hover-border-color: var(--color-azul-noche);
-    --bs-btn-hover-color: var(--color-blanco);
+    --bs-btn-active-color: var(--color-blanco);
     --bs-btn-active-bg: var(--color-azul-noche);
     --bs-btn-active-border-color: var(--color-azul-noche);
-    --bs-btn-active-color: var(--color-blanco);
+    --bs-btn-focus-shadow-rgb: 30, 122, 79;
 }
 
-.btn-outline-success {
+.btn-outline-primary {
     --bs-btn-color: var(--color-verde-ruta);
     --bs-btn-border-color: var(--color-verde-ruta);
+    --bs-btn-hover-color: var(--color-blanco);
     --bs-btn-hover-bg: var(--color-verde-ruta);
     --bs-btn-hover-border-color: var(--color-verde-ruta);
-    --bs-btn-hover-color: var(--color-blanco);
+    --bs-btn-active-color: var(--color-blanco);
     --bs-btn-active-bg: var(--color-verde-ruta);
     --bs-btn-active-border-color: var(--color-verde-ruta);
-    --bs-btn-active-color: var(--color-blanco);
+    --bs-btn-focus-shadow-rgb: 30, 122, 79;
 }
 
-.btn-warning {
+/* Naranja Pedal con texto Azul Noche */
+.btn-naranja {
+    --bs-btn-color: var(--color-azul-noche);
     --bs-btn-bg: var(--color-naranja-pedal);
     --bs-btn-border-color: var(--color-naranja-pedal);
-    --bs-btn-color: var(--color-azul-noche);
-    --bs-btn-hover-bg: var(--color-crema);
-    --bs-btn-hover-border-color: var(--color-crema);
     --bs-btn-hover-color: var(--color-azul-noche);
-    --bs-btn-active-bg: var(--color-crema);
-    --bs-btn-active-border-color: var(--color-crema);
+    --bs-btn-hover-bg: var(--color-blanco);
+    --bs-btn-hover-border-color: var(--color-naranja-pedal);
     --bs-btn-active-color: var(--color-azul-noche);
+    --bs-btn-active-bg: var(--color-crema);
+    --bs-btn-active-border-color: var(--color-naranja-pedal);
+    --bs-btn-focus-shadow-rgb: 243, 154, 43;
 }
-
 /* Foco visible con teclado; sobre fondo oscuro el contorno es blanco */
 .btn:focus-visible {
     outline: 3px solid var(--color-azul-noche);
@@ -328,8 +336,25 @@ thead th {
     outline-offset: 2px;
     box-shadow: 0 0 0 2px var(--color-blanco);
 }
+.portada-rueda {
+    padding-block: var(--espacio-l);
+}
 
+.portada-rueda h2 {
+    color: var(--color-verde-ruta);
+    font-size: 1.75rem;
+}
 
+/* línea naranja */
+.titulo-seccion {
+    padding-bottom: var(--espacio-s);
+    border-bottom: 3px solid var(--color-naranja-pedal);
+}
+
+/* borde superior naranja */
+.pie-rueda {
+    border-top: 4px solid var(--color-naranja-pedal);
+}
 /*5. FORMULARIO  */
 fieldset {
     min-width: 0;
