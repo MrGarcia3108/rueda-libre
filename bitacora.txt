@@ -248,9 +248,9 @@ El botón con Tailwind
 html
 <a href="../paginas/reservas.html" class="inline-block rounded-lg bg-[#F39A2B] px-8 py-3 text-base font-bold text-[#14213D]">Inscríbete</a>
 
-Arme el aspecto sumando utilidades: cada clase hace una sola cosa (color de fondo, relleno, bordes redondeados, grosor de letra), sin css
+utilidades: cada clase hace una sola cosa (color de fondo, relleno, bordes redondeados, grosor de letra), sin css
 
-### Diferencias
+Diferencias
 
 Bootstrap                    Tailwind  
 Piezas ya diseñadas          Clases pequeñas de una sola propiedad 
@@ -262,3 +262,29 @@ Estilo Bootstrap             parte de cero
 Diferencia
 
 Un framework de componentes me entrega elementos ya diseñados y yo los personalizo, uno utility-first me entrega las piezas y yo diseño cada elemento.
+
+Tailwind CLI
+
+Configuración
+- Instalé tailwindcss y @tailwindcss/cli con npm dentro de la carpeta nocturna.
+- src/input.css contiene @import "tailwindcss";.
+- .gitignore excluye node_modules/.
+- Comando: npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch.
+
+Qué encontré en output.css
+
+rounded-lg         Sí                                                   La CLI la detectó en index.html y generó su CSS 
+bg-pink-500        No                                                   Ningún archivo la menciona, así que no se genera 
+bg-pink-500        escrita en index.html    Sí, aparece al guardar      --watch la CLI regenera el archivo 
+
+Por qué una clase que no uso no aparece
+Tailwind lee los archivos del proyecto, detecta los nombres y genera CSS solo para esos.
+
+Botones
+
+ Principal     fondo y texto: Naranja Pedal con texto Azul Noche    hover: Fondo blanco y sombra mayor	           focus: Anillo blanco de 4 px
+ Secundario    fondo y texto: Crema con texto Azul Noche            hover: Fondo Naranja Pedal y sombra mayor	   focus: Anillo blanco de 4 px
+ Contorno      fondo y texto: Borde y texto Crema, sin fondo        hover: Fondo Crema con texto Azul Noche	       focus: Anillo naranja de 4 px
+
+Por qué la CLI y no Play CDN
+El Play CDN compila cada vez que se abre la página y es para desarrollo. La CLI genera una hoja estática que GitHub Pages puede servir.
