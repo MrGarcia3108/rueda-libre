@@ -227,3 +227,38 @@ Qué construí
 Qué mejoraría
 - Mover el foco al primer campo con error al enviar el formulario.
 - Mejorar la seccion de promociones.
+
+Prototipo con Tailwind
+
+Bootstrap 
+
+html
+<a href="paginas/reservas.html" class="btn btn-primary btn-lg">Reserva ahora</a>
+
+css
+.btn-primary {
+    --bs-btn-bg: var(--color-verde-ruta);
+    --bs-btn-hover-bg: var(--color-azul-noche);
+}
+
+Elegí un componente que ya existe, una variante. El aspecto ya venía hecho. Para que usara los colores de la pagina tuve que escribir CSS, sobrescribiendo Bootstrap.
+
+El botón con Tailwind 
+
+html
+<a href="../paginas/reservas.html" class="inline-block rounded-lg bg-[#F39A2B] px-8 py-3 text-base font-bold text-[#14213D]">Inscríbete</a>
+
+Arme el aspecto sumando utilidades: cada clase hace una sola cosa (color de fondo, relleno, bordes redondeados, grosor de letra), sin css
+
+### Diferencias
+
+Bootstrap                    Tailwind  
+Piezas ya diseñadas          Clases pequeñas de una sola propiedad 
+las clases de Bootstrap      y en mi css  En el HTML, en cada elemento 
+Sobrescribir variables       Cambiar las     clases del elemento 
+Pocas                        Muchas 
+Estilo Bootstrap             parte de cero 
+
+Diferencia
+
+Un framework de componentes me entrega elementos ya diseñados y yo los personalizo, uno utility-first me entrega las piezas y yo diseño cada elemento.
