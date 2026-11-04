@@ -288,3 +288,19 @@ Botones
 
 Por qué la CLI y no Play CDN
 El Play CDN compila cada vez que se abre la página y es para desarrollo. La CLI genera una hoja estática que GitHub Pages puede servir.
+
+kit de componentes
+
+Radios de borde                    rounded-lg                                                                            Botones, campos, alertas
+Grande para contenedores           rounded-xl                                                                            Card
+Total para etiquetas               rounded-full                                                                          Etiqueta de nivel
+Grosor de borde                    border-2, border-l-4                                                                  Campos, botón de contorno, card, alertas
+Colores                            bg-[#14213D], bg-[#FAF6EF], bg-[#F39A2B], bg-[#1E7A4F], text-[#5B6470], text-white    Todos los componentes
+Sombras                            shadow-md hover:shadow-lg, shadow-lg hover:shadow-2xl                                 Botones, card
+Foco                               focus:outline-hidden focus:ring-4                                                     Botones y campos
+Tipografía                         font-bold, font-extrabold, uppercase, tracking-widest                                 Todos
+
+Cómo comparar
+
+- Los cuatro usan rounded-lg o rounded-xl.
+- Ningún componente usa un espaciado fuera de la escala.

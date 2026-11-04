@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit de componentes | Rueda Nocturna</title>
+    <link href="src/output.css" rel="stylesheet">
+</head>
+<body>
+    <main class="min-h-screen bg-[#14213D] px-6 py-20 text-[#FAF6EF]">
+        <div class="mx-auto max-w-3xl space-y-8">
+            <h1 class="text-5xl font-extrabold leading-tight tracking-tight text-white">Kit de componentes</h1>
+
+            <section class="space-y-6">
+                <h2 class="text-3xl font-bold text-white">Botones</h2>
+                <div class="flex flex-wrap gap-4">
+                    <button type="button" class="rounded-lg bg-[#F39A2B] px-8 py-3 text-base font-bold text-[#14213D] shadow-md hover:bg-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-white">Inscríbete</button>
+
+                    <button type="button" class="rounded-lg bg-[#FAF6EF] px-8 py-3 text-base font-bold text-[#14213D] shadow-md hover:bg-[#F39A2B] hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-white">Ver rutas</button>
+
+                    <button type="button" class="rounded-lg border-2 border-[#FAF6EF] px-8 py-3 text-base font-bold text-[#FAF6EF] hover:bg-[#FAF6EF] hover:text-[#14213D] focus:outline-hidden focus:ring-4 focus:ring-[#F39A2B]">Más información</button>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-3xl font-bold text-white">Ruta</h2>
+                <article class="w-full max-w-md overflow-hidden rounded-xl border-2 border-[#FAF6EF]/30 bg-white/5 shadow-lg shadow-black/50 hover:border-[#F39A2B] hover:shadow-2xl hover:shadow-black/70">
+                    <img src="../img/Rfacil.jfif" alt="Ciclistas recorriendo el centro de Medellín de noche" class="h-48 w-full object-cover">
+                    <div class="space-y-4 p-6">
+                        <p class="inline-block rounded-full bg-[#1E7A4F] px-3 py-1 text-sm font-bold uppercase tracking-widest text-white">Nivel: Fácil</p>
+
+                        <h3 class="text-2xl font-extrabold leading-tight text-white">Luces del Centro</h3>
+
+                        <dl class="space-y-3">
+                            <div class="flex items-baseline justify-between gap-4">
+                                <dt class="text-xs uppercase tracking-widest text-[#FAF6EF]/70">Distancia</dt>
+                                <dd class="text-lg font-semibold text-white">10 km</dd>
+                            </div>
+                            <div class="flex items-baseline justify-between gap-4">
+                                <dt class="text-xs uppercase tracking-widest text-[#FAF6EF]/70">Duración</dt>
+                                <dd class="text-lg font-semibold text-white">2 h</dd>
+                            </div>
+                            <div class="flex items-baseline justify-between gap-4">
+                                <dt class="text-xs uppercase tracking-widest text-[#FAF6EF]/70">Punto de encuentro</dt>
+                                <dd class="text-lg font-semibold text-white">Sede de Rueda Libre</dd>
+                            </div>
+                        </dl>
+
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-[#FAF6EF]/70">Precio</p>
+                            <p class="text-4xl font-extrabold text-[#F39A2B]">$55.000</p>
+                        </div>
+
+                        <a href="../paginas/reservas.html" class="inline-block rounded-lg bg-[#F39A2B] px-8 py-3 text-base font-bold text-[#14213D] shadow-md hover:bg-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-white">Inscríbete</a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-3xl font-bold text-white">Alertas</h2>
+
+                <div role="note" class="rounded-lg border-l-4 border-[#FAF6EF] bg-[#FAF6EF]/10 p-4">
+                    <p class="text-lg font-bold text-white">Información</p>
+                    <p class="mt-1 text-[#FAF6EF]">Todas las rutas salen de la sede de Rueda Libre e incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                </div>
+
+                <div role="status" class="rounded-lg border-l-4 border-[#1E7A4F] bg-[#1E7A4F]/20 p-4">
+                    <p class="text-lg font-bold text-white">Éxito</p>
+                    <p class="mt-1 text-[#FAF6EF]">Tu inscripción quedó registrada.</p>
+                </div>
+
+                <div role="alert" class="rounded-lg border-l-4 border-[#F39A2B] bg-[#F39A2B]/20 p-4">
+                    <p class="text-lg font-bold text-white">Advertencia</p>
+                    <p class="mt-1 text-[#FAF6EF]">Recuerda llevar tu documento de identidad original al recoger la bicicleta.</p>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-3xl font-bold text-white">Campos de formulario</h2>
+                <div class="max-w-md space-y-6">
+                    <div>
+                        <label for="correo" class="mb-1 block text-sm font-bold text-white">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" aria-describedby="ayuda-correo" class="w-full rounded-lg border-2 border-[#5B6470] bg-[#FAF6EF] px-4 py-3 text-base text-[#14213D] placeholder:text-[#5B6470] focus:border-[#F39A2B] focus:outline-hidden focus:ring-4 focus:ring-[#F39A2B]">
+                        <p id="ayuda-correo" class="mt-1 text-sm text-[#FAF6EF]/70">Te enviaremos la confirmación de tu inscripción.</p>
+                    </div>
+
+                    <div>
+                        <label for="celular" class="mb-1 block text-sm font-bold text-white">Celular</label>
+                        <input type="tel" id="celular" name="celular" inputmode="numeric" placeholder="3001234567" aria-describedby="ayuda-celular" class="w-full rounded-lg border-2 border-[#5B6470] bg-[#FAF6EF] px-4 py-3 text-base text-[#14213D] placeholder:text-[#5B6470] focus:border-[#F39A2B] focus:outline-hidden focus:ring-4 focus:ring-[#F39A2B]">
+                        <p id="ayuda-celular" class="mt-1 text-sm text-[#FAF6EF]/70">10 dígitos, empieza por 3.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
