@@ -304,3 +304,9 @@ Cómo comparar
 
 - Los cuatro usan rounded-lg o rounded-xl.
 - Ningún componente usa un espaciado fuera de la escala.
+
+Por que utilice Grid
+Con Flexbox, el ancho de cada paso dependería de la longitud de texto, y las columnas no quedarían alineadas. Con Grid, el contenedor define las columnas y cada paso ocupa una de ellas.
+
+Contenedor común
+mx-auto max-w-6xl px-6: centrado, ancho máximo y relleno lateral.
