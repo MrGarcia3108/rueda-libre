@@ -306,7 +306,15 @@ Cómo comparar
 - Ningún componente usa un espaciado fuera de la escala.
 
 Por que utilice Grid
-Con Flexbox, el ancho de cada paso dependería de la longitud de texto, y las columnas no quedarían alineadas. Con Grid, el contenedor define las columnas y cada paso ocupa una de ellas.
+-Con Flexbox, el ancho de cada paso dependería de la longitud de texto, y las columnas no quedarían alineadas. Con Grid, el contenedor define las columnas y cada paso ocupa una de ellas.
 
 Contenedor común
-mx-auto max-w-6xl px-6: centrado, ancho máximo y relleno lateral.
+-mx-auto max-w-6xl px-6: centrado, ancho máximo y relleno lateral.
+
+Comportamiento
+
+Ancho	  Encabezado	                     Rutas	     Pasos	         Pie
+360 px	  Apilado: logo y botón 	         1 columna	 1 columna	     Apilado
+768 px	  En fila, con enlaces	             2 columnas	 2 columnas	     En fila
+1024 px	  En fila	                         3 columnas	 4 columnas	     En fila
+1280 px	  En fila	                         3 columnas	 4 columnas	     En fila           

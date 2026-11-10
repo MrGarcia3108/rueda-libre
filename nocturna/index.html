@@ -9,30 +9,27 @@
 </head>
 <body class="bg-[#14213D] text-[#FAF6EF]">
     <header class="border-b-2 border-[#FAF6EF]/20 py-4">
-        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6">
-            <a href="#inicio"><img src="../img/logo.png" alt="Rueda Libre, ir al inicio" class="h-12 w-auto"></a>
-
-            <div class="flex flex-wrap items-center gap-6">
-                <nav aria-label="Secciones de la página">
-                    <ul class="flex flex-wrap gap-6">
-                        <li><a href="#inicio" class="hover:underline">Inicio</a></li>
-                        <li><a href="#rutas" class="hover:underline">Rutas</a></li>
-                        <li><a href="#como-funciona" class="hover:underline">¿Cómo funciona?</a></li>
-                    </ul>
-                </nav>
-                <a href="#inscripcion"
-                    class="inline-block rounded-lg bg-[#F39A2B] px-8 py-3 text-base font-bold text-[#14213D] shadow-md hover:bg-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-white">Inscríbete</a>
-            </div>
+        <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 sm:px-6 md:flex-row md:gap-6 lg:px-8">
+            <a href="#inicio" class="md:mr-auto"><img src="../img/logo.png" alt="Rueda Libre, ir al inicio"
+                    class="h-12 w-auto"></a>
+                    <nav class="hidden md:block" aria-label="Secciones de la página">
+                        <ul class="flex gap-6">
+                            <li><a href="#inicio" class="hover:underline">Inicio</a></li>
+                            <li><a href="#rutas" class="hover:underline">Rutas</a></li>
+                            <li><a href="#como-funciona" class="hover:underline">¿Cómo funciona?</a></li>
+                        </ul>
+                    </nav>
+            <a href="#inscripcion"
+                class="inline-block rounded-lg bg-[#F39A2B] px-8 py-3 text-base font-bold text-[#14213D] shadow-md hover:bg-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-white">Inscríbete</a>
         </div>
     </header>
     <main>
-        <section id="inicio" class="py-16">
-            <div class="mx-auto max-w-6xl px-6">
+        <section id="inicio" class="py-10 md:py-16 lg:py-20">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="max-w-3xl space-y-6">
-                    <p
-                        class="inline-block rounded-full bg-[#F39A2B] px-4 py-1 text-sm font-bold uppercase tracking-widest text-[#14213D]">
+                    <p class="inline-block rounded-full bg-[#F39A2B] px-4 py-1 text-sm font-bold uppercase tracking-widest text-[#14213D]">
                         Nuevo - Jueves a sábado</p>
-                    <h1 class="text-5xl font-extrabold leading-tight tracking-tight text-white">Rueda Nocturna</h1>
+                    <h1 class="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">Rueda Nocturna</h1>
                     <p class="max-w-xl text-lg leading-relaxed">Descubre Medellín en bici cuando se encienden las luces
                     </p>
                     <ul class="flex gap-10">
@@ -55,10 +52,10 @@
                 </div>
             </div>
         </section>
-        <section id="rutas" class="py-16">
-            <div class="mx-auto max-w-6xl px-6">
-                <h2 class="mb-8 text-3xl font-bold text-white">Rutas</h2>
-                <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <section id="rutas" class="py-10 md:py-16 lg:py-20">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <h2 class="mb-8 text-2xl font-bold text-white lg:text-3xl">Rutas</h2>
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     <article
                         class="w-full max-w-md overflow-hidden rounded-xl border-2 border-[#FAF6EF]/30 bg-white/5 shadow-lg shadow-black/50 hover:border-[#F39A2B] hover:shadow-2xl hover:shadow-black/70">
                         <img src="../img/Rfacil.jfif" alt="Ciclistas recorriendo el centro de Medellín de noche"
@@ -159,9 +156,9 @@
                 </div>
             </div>
         </section>
-        <section id="como-funciona" class="py-16">
-            <div class="mx-auto max-w-6xl px-6">
-                <h2 class="mb-8 text-3xl font-bold text-white">¿Cómo funciona?</h2>
+        <section id="como-funciona" class="py-10 md:py-16 lg:py-20">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <h2 class="mb-8 text-2xl font-bold text-white lg:text-3xl">¿Cómo funciona?</h2>
                 <ol class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                     <li class="space-y-3">
                         <p class="text-4xl font-extrabold text-[#F39A2B]">1</p>
@@ -188,11 +185,11 @@
                 </ol>
             </div>
         </section>
-        <section id="inscripcion" class="border-y-2 border-[#F39A2B] bg-white/5 py-12">
-            <div class="mx-auto max-w-6xl px-6">
+        <section id="inscripcion" class="border-y-2 border-[#F39A2B] bg-white/5 py-8 md:py-12">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                     <div class="space-y-3">
-                        <h2 class="text-3xl font-bold text-white">¿Listo para rodar de noche?</h2>
+                        <h2 class="text-2xl font-bold text-white lg:text-3xl">¿Listo para rodar de noche?</h2>
                         <p class="max-w-xl text-lg">Elige tu ruta, inscríbete y recoge tu equipo en la sede de Rueda
                             Libre.</p>
                     </div>
@@ -202,8 +199,8 @@
             </div>
         </section>
     </main>
-    <footer class="border-t-2 border-[#FAF6EF]/20 py-10">
-        <div class="mx-auto max-w-6xl px-6">
+    <footer class="border-t-2 border-[#FAF6EF]/20 py-8 md:py-10">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-8 md:flex-row md:justify-between">
                 <div class="flex-1 space-y-3">
                     <p class="text-lg font-bold text-white">Rueda Nocturna</p>
