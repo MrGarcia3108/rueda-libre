@@ -3,91 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Kit de componentes | Rueda Nocturna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="src/output.css" rel="stylesheet">
 </head>
-<body>
-    <main class="min-h-screen bg-[#14213D] px-6 py-20 text-[#FAF6EF]">
+<body class="bg-crema font-texto text-azul-noche dark:bg-azul-noche dark:text-crema">
+    <main class="min-h-screen px-6 py-20">
         <div class="mx-auto max-w-3xl space-y-8">
-            <h1 class="text-5xl font-extrabold leading-tight tracking-tight text-white">Kit de componentes</h1>
-
+            <h1 class="font-titulos text-5xl font-bold leading-tight tracking-tight text-azul-noche dark:text-white">Kit de componentes</h1>
             <section class="space-y-6">
-                <h2 class="text-3xl font-bold text-white">Botones</h2>
+                <h2 class="font-titulos text-3xl font-bold text-azul-noche dark:text-white">Botones</h2>
                 <div class="flex flex-wrap gap-4">
-                    <button type="button" class="rounded-lg bg-[#F39A2B] px-8 py-3 text-base font-bold text-[#14213D] shadow-md hover:bg-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-white">Inscríbete</button>
-
-                    <button type="button" class="rounded-lg bg-[#FAF6EF] px-8 py-3 text-base font-bold text-[#14213D] shadow-md hover:bg-[#F39A2B] hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-white">Ver rutas</button>
-
-                    <button type="button" class="rounded-lg border-2 border-[#FAF6EF] px-8 py-3 text-base font-bold text-[#FAF6EF] hover:bg-[#FAF6EF] hover:text-[#14213D] focus:outline-hidden focus:ring-4 focus:ring-[#F39A2B]">Más información</button>
+                    <button type="button" class="rounded-lg bg-naranja-pedal px-8 py-3 text-base font-semibold text-azul-noche shadow-md hover:bg-azul-noche hover:text-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-azul-noche dark:hover:bg-white dark:hover:text-azul-noche dark:focus:ring-white">Inscríbete</button>
+                    <button type="button" class="rounded-lg bg-azul-noche px-8 py-3 text-base font-semibold text-crema shadow-md hover:bg-naranja-pedal hover:text-azul-noche hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-verde-ruta dark:bg-crema dark:text-azul-noche dark:focus:ring-white">Ver rutas</button>
+                    <button type="button" class="rounded-lg border-2 border-azul-noche px-8 py-3 text-base font-semibold text-azul-noche hover:bg-azul-noche hover:text-crema focus:outline-hidden focus:ring-4 focus:ring-verde-ruta dark:border-crema dark:text-crema dark:hover:bg-crema dark:hover:text-azul-noche dark:focus:ring-amarillo-farol">Más información</button>
                 </div>
             </section>
-
             <section class="space-y-6">
-                <h2 class="text-3xl font-bold text-white">Ruta</h2>
-                <article class="w-full max-w-md overflow-hidden rounded-xl border-2 border-[#FAF6EF]/30 bg-white/5 shadow-lg shadow-black/50 hover:border-[#F39A2B] hover:shadow-2xl hover:shadow-black/70">
-                    <img src="../img/Rfacil.jfif" alt="Ciclistas recorriendo el centro de Medellín de noche" class="h-48 w-full object-cover">
+                <h2 class="font-titulos text-3xl font-bold text-azul-noche dark:text-white">Card</h2>
+                <article class="w-full max-w-md overflow-hidden rounded-xl border-2 border-azul-noche/20 bg-white shadow-lg shadow-azul-noche/10 hover:border-verde-ruta hover:shadow-2xl hover:shadow-azul-noche/20 dark:border-crema/30 dark:bg-white/5 dark:shadow-black/50 dark:hover:border-amarillo-farol dark:hover:shadow-black/70">
+                    <img src="../img/rioparques.png" alt="Ciclistas recorriendo el centro de Medellín de noche" class="h-48 w-full object-cover">
                     <div class="space-y-4 p-6">
-                        <p class="inline-block rounded-full bg-[#1E7A4F] px-3 py-1 text-sm font-bold uppercase tracking-widest text-white">Nivel: Fácil</p>
-
-                        <h3 class="text-2xl font-extrabold leading-tight text-white">Luces del Centro</h3>
-
+                        <p class="inline-block rounded-full bg-verde-ruta px-3 py-1 text-sm font-semibold uppercase tracking-widest text-white">Nivel: Fácil</p>
+                        <h3 class="font-titulos text-2xl font-bold leading-tight text-azul-noche dark:text-white">Luces del Centro</h3>
                         <dl class="space-y-3">
                             <div class="flex items-baseline justify-between gap-4">
-                                <dt class="text-xs uppercase tracking-widest text-[#FAF6EF]/70">Distancia</dt>
-                                <dd class="text-lg font-semibold text-white">10 km</dd>
+                                <dt class="text-xs font-semibold uppercase tracking-widest text-gris-asfalto dark:text-crema/70">Distancia</dt>
+                                <dd class="text-lg font-semibold text-azul-noche dark:text-white">10 km</dd>
                             </div>
                             <div class="flex items-baseline justify-between gap-4">
-                                <dt class="text-xs uppercase tracking-widest text-[#FAF6EF]/70">Duración</dt>
-                                <dd class="text-lg font-semibold text-white">2 h</dd>
+                                <dt class="text-xs font-semibold uppercase tracking-widest text-gris-asfalto dark:text-crema/70">Duración</dt>
+                                <dd class="text-lg font-semibold text-azul-noche dark:text-white">2 h</dd>
                             </div>
                             <div class="flex items-baseline justify-between gap-4">
-                                <dt class="text-xs uppercase tracking-widest text-[#FAF6EF]/70">Punto de encuentro</dt>
-                                <dd class="text-lg font-semibold text-white">Sede de Rueda Libre</dd>
+                                <dt class="text-xs font-semibold uppercase tracking-widest text-gris-asfalto dark:text-crema/70">Punto de encuentro</dt>
+                                <dd class="text-lg font-semibold text-azul-noche dark:text-white">Sede de Rueda Libre</dd>
                             </div>
                         </dl>
-
                         <div>
-                            <p class="text-xs uppercase tracking-widest text-[#FAF6EF]/70">Precio</p>
-                            <p class="text-4xl font-extrabold text-[#F39A2B]">$55.000</p>
+                            <p class="text-xs font-semibold uppercase tracking-widest text-gris-asfalto dark:text-crema/70">Precio</p>
+                            <p class="font-titulos text-4xl font-bold text-verde-ruta dark:text-amarillo-farol">$55.000</p>
                         </div>
-
-                        <a href="../paginas/reservas.html" class="inline-block rounded-lg bg-[#F39A2B] px-8 py-3 text-base font-bold text-[#14213D] shadow-md hover:bg-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-white">Inscríbete</a>
+                        <a href="../paginas/reservas.html" class="inline-block rounded-lg bg-naranja-pedal px-8 py-3 text-base font-semibold text-azul-noche shadow-md hover:bg-azul-noche hover:text-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-azul-noche dark:hover:bg-white dark:hover:text-azul-noche dark:focus:ring-white">Inscríbete</a>
                     </div>
                 </article>
             </section>
-
             <section class="space-y-6">
-                <h2 class="text-3xl font-bold text-white">Alertas</h2>
-
-                <div role="note" class="rounded-lg border-l-4 border-[#FAF6EF] bg-[#FAF6EF]/10 p-4">
-                    <p class="text-lg font-bold text-white">Información</p>
-                    <p class="mt-1 text-[#FAF6EF]">Todas las rutas salen de la sede de Rueda Libre e incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                <h2 class="font-titulos text-3xl font-bold text-azul-noche dark:text-white">Alertas</h2>
+                <div role="note" class="rounded-lg border-l-4 border-azul-noche bg-azul-noche/10 p-4 dark:border-crema dark:bg-crema/10">
+                    <p class="font-titulos text-lg font-bold text-azul-noche dark:text-white">Información</p>
+                    <p class="mt-1">Todas las rutas salen de la sede de Rueda Libre e incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
                 </div>
-
-                <div role="status" class="rounded-lg border-l-4 border-[#1E7A4F] bg-[#1E7A4F]/20 p-4">
-                    <p class="text-lg font-bold text-white">Éxito</p>
-                    <p class="mt-1 text-[#FAF6EF]">Tu inscripción quedó registrada.</p>
+                <div role="status" class="rounded-lg border-l-4 border-verde-ruta bg-verde-ruta/10 p-4 dark:bg-verde-ruta/20">
+                    <p class="font-titulos text-lg font-bold text-azul-noche dark:text-white">Éxito</p>
+                    <p class="mt-1">Tu inscripción quedó registrada.</p>
                 </div>
-
-                <div role="alert" class="rounded-lg border-l-4 border-[#F39A2B] bg-[#F39A2B]/20 p-4">
-                    <p class="text-lg font-bold text-white">Advertencia</p>
-                    <p class="mt-1 text-[#FAF6EF]">Recuerda llevar tu documento de identidad original al recoger la bicicleta.</p>
+                <div role="alert" class="rounded-lg border-l-4 border-naranja-pedal bg-naranja-pedal/15 p-4 dark:border-amarillo-farol dark:bg-amarillo-farol/15">
+                    <p class="font-titulos text-lg font-bold text-azul-noche dark:text-white">Advertencia</p>
+                    <p class="mt-1">Recuerda llevar tu documento de identidad original al recoger la bicicleta.</p>
                 </div>
             </section>
-
             <section class="space-y-6">
-                <h2 class="text-3xl font-bold text-white">Campos de formulario</h2>
+                <h2 class="font-titulos text-3xl font-bold text-azul-noche dark:text-white">Campos de formulario</h2>
                 <div class="max-w-md space-y-6">
                     <div>
-                        <label for="correo" class="mb-1 block text-sm font-bold text-white">Correo electrónico</label>
-                        <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" aria-describedby="ayuda-correo" class="w-full rounded-lg border-2 border-[#5B6470] bg-[#FAF6EF] px-4 py-3 text-base text-[#14213D] placeholder:text-[#5B6470] focus:border-[#F39A2B] focus:outline-hidden focus:ring-4 focus:ring-[#F39A2B]">
-                        <p id="ayuda-correo" class="mt-1 text-sm text-[#FAF6EF]/70">Te enviaremos la confirmación de tu inscripción.</p>
+                        <label for="correo" class="mb-1 block text-sm font-semibold text-azul-noche dark:text-white">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" aria-describedby="ayuda-correo" class="w-full rounded-lg border-2 border-gris-asfalto bg-white px-4 py-3 text-base text-azul-noche placeholder:text-gris-asfalto focus:border-verde-ruta focus:outline-hidden focus:ring-4 focus:ring-verde-ruta dark:border-crema/50 dark:bg-white/5 dark:text-white dark:placeholder:text-crema/60 dark:focus:border-amarillo-farol dark:focus:ring-amarillo-farol">
+                        <p id="ayuda-correo" class="mt-1 text-sm text-gris-asfalto dark:text-crema/70">Te enviaremos la confirmación de tu inscripción.</p>
                     </div>
-
                     <div>
-                        <label for="celular" class="mb-1 block text-sm font-bold text-white">Celular</label>
-                        <input type="tel" id="celular" name="celular" inputmode="numeric" placeholder="3001234567" aria-describedby="ayuda-celular" class="w-full rounded-lg border-2 border-[#5B6470] bg-[#FAF6EF] px-4 py-3 text-base text-[#14213D] placeholder:text-[#5B6470] focus:border-[#F39A2B] focus:outline-hidden focus:ring-4 focus:ring-[#F39A2B]">
-                        <p id="ayuda-celular" class="mt-1 text-sm text-[#FAF6EF]/70">10 dígitos, empieza por 3.</p>
+                        <label for="celular" class="mb-1 block text-sm font-semibold text-azul-noche dark:text-white">Celular</label>
+                        <input type="tel" id="celular" name="celular" inputmode="numeric" placeholder="3001234567" aria-describedby="ayuda-celular" class="w-full rounded-lg border-2 border-gris-asfalto bg-white px-4 py-3 text-base text-azul-noche placeholder:text-gris-asfalto focus:border-verde-ruta focus:outline-hidden focus:ring-4 focus:ring-verde-ruta dark:border-crema/50 dark:bg-white/5 dark:text-white dark:placeholder:text-crema/60 dark:focus:border-amarillo-farol dark:focus:ring-amarillo-farol">
+                        <p id="ayuda-celular" class="mt-1 text-sm text-gris-asfalto dark:text-crema/70">10 dígitos, empieza por 3.</p>
                     </div>
                 </div>
             </section>
