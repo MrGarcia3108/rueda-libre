@@ -18,3 +18,17 @@
     --font-titulos: "Montserrat", sans-serif;
     --font-texto: "Open Sans", sans-serif;
 }
+
+@layer components {
+    .btn-principal {
+        @apply inline-block px-8 py-3 text-base font-semibold rounded-lg bg-naranja-pedal text-azul-noche shadow-md hover:bg-azul-noche hover:text-white hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-azul-noche dark:hover:bg-white dark:hover:text-azul-noche dark:focus:ring-white;
+    }
+
+    .btn-secundario {
+        @apply inline-block px-8 py-3 text-base font-semibold rounded-lg bg-azul-noche text-crema shadow-md hover:bg-naranja-pedal hover:text-azul-noche hover:shadow-lg focus:outline-hidden focus:ring-4 focus:ring-verde-ruta dark:bg-crema dark:text-azul-noche dark:focus:ring-white;
+    }
+
+    .btn-contorno {
+        @apply inline-block px-8 py-3 text-base font-semibold rounded-lg border-2 border-azul-noche text-azul-noche hover:bg-azul-noche hover:text-crema focus:outline-hidden focus:ring-4 focus:ring-verde-ruta dark:border-crema dark:text-crema dark:hover:bg-crema dark:hover:text-azul-noche dark:focus:ring-amarillo-farol;
+    }
+}
