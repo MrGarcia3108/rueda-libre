@@ -2,7 +2,7 @@
 
 Sitio web de **Rueda libre**, bicicletas en Medellín, y landing para la campaña **Rueda Nocturna**.
 
-**Sitio publicado:** [mrgarcia3108.github.io/rueda-libre/]
+**Sitio publicado:** [https://mrgarcia3108.github.io/rueda-libre/]
 
 ## Contenido
 
